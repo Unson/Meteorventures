@@ -42,8 +42,9 @@ const SERVICES_DATA = [
 
 const TRUST_STATS = [
   { number: '10+', label: 'Years Combined Experience' },
-  { number: '15+', label: 'Small Businesses Helped' },
-  { number: '100%', label: 'Veteran-Owned & Operated' }
+  { number: '50+', label: 'Small Businesses Transformed' },
+  { number: '100%', label: 'Veteran-Owned & Operated' },
+  { number: '2025', label: 'Founded in Philadelphia, PA' }
 ];
 
 const INSIGHTS_DATA = [
@@ -432,7 +433,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 gap-8 mt-12 border-t border-cosmic-teal/10 pt-12">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 border-t border-cosmic-teal/10 pt-12">
                 {TRUST_STATS.map((stat, idx) => (
                   <div key={idx}>
                     <div className="font-heading text-4xl md:text-5xl text-cosmic-teal mb-2">{stat.number}</div>

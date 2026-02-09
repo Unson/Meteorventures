@@ -9,6 +9,7 @@ export default function Footer() {
     { path: '/about', label: 'About Us' },
     { path: '/services', label: 'Services' },
     { path: '/insights', label: 'Insights' },
+    { path: '/partners', label: 'Partners' },
     { path: '/free-audit', label: 'Free Audit' },
     { path: '/contact', label: 'Contact' }
   ];
