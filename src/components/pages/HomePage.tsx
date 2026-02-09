@@ -259,14 +259,18 @@ export default function HomePage() {
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative flex justify-center lg:justify-start">
-              <div className="absolute -inset-8 bg-gradient-to-r from-nebula-cyan/20 via-nebula-magenta/15 to-nebula-cyan/20 blur-3xl rounded-full animate-pulse" />
-              <div className="relative aspect-[4/5] w-1/2 overflow-hidden rounded-lg border-2 border-nebula-cyan/50 shadow-2xl shadow-nebula-cyan/30">
+              {/* Enhanced dramatic glow effect */}
+              <div className="absolute -inset-12 bg-gradient-to-r from-nebula-cyan/40 via-nebula-magenta/30 to-nebula-cyan/40 blur-3xl rounded-full animate-pulse" />
+              <div className="absolute -inset-16 bg-gradient-to-r from-nebula-magenta/20 via-nebula-violet/15 to-nebula-magenta/20 blur-2xl rounded-full opacity-60 animate-pulse" style={{ animationDelay: '0.5s' }} />
+              
+              <div className="relative aspect-[4/5] w-2/3 overflow-hidden rounded-lg border-2 border-nebula-cyan/60 shadow-2xl shadow-nebula-cyan/50">
                  <Image 
                   src="https://static.wixstatic.com/media/ca33ee_1d9aab7a71bf4125b0191d81a37a9541~mv2.png?originWidth=384&originHeight=448" 
                   alt="Abstract representation of digital void" 
                   className="w-full h-full object-cover opacity-100 hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-b from-nebula-magenta/10 via-transparent to-nebula-cyan/10" />
                 <div className="absolute bottom-8 left-8 right-8">
                   <h3 className="font-heading text-4xl text-foreground mb-3 relative z-10 font-bold">The Invisible Void</h3>
                   <p className="font-paragraph text-lg text-foreground/90 relative z-10 font-semibold">Where good businesses go to disappear.</p>
