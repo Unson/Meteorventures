@@ -42,7 +42,7 @@ const SERVICES_DATA = [
 
 const TRUST_STATS = [
   { number: '10+', label: 'Years Combined Experience' },
-  { number: '50+', label: 'Small Businesses Transformed' },
+  { number: '15+', label: 'Small Businesses Helped' },
   { number: '100%', label: 'Veteran-Owned & Operated' },
   { number: '2025', label: 'Founded in Philadelphia, PA' }
 ];
