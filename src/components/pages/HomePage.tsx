@@ -260,7 +260,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative flex justify-center lg:justify-start">
               <div className="absolute -inset-8 bg-gradient-to-r from-nebula-cyan/20 via-nebula-magenta/15 to-nebula-cyan/20 blur-3xl rounded-full animate-pulse" />
-              <div className="relative aspect-[4/5] w-3/5 overflow-hidden rounded-lg border-2 border-nebula-cyan/50 shadow-2xl shadow-nebula-cyan/30">
+              <div className="relative aspect-[4/5] w-1/2 overflow-hidden rounded-lg border-2 border-nebula-cyan/50 shadow-2xl shadow-nebula-cyan/30">
                  <Image 
                   src="https://static.wixstatic.com/media/ca33ee_1d9aab7a71bf4125b0191d81a37a9541~mv2.png?originWidth=384&originHeight=448" 
                   alt="Abstract representation of digital void" 
