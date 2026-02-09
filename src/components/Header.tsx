@@ -38,7 +38,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-accent-c-t-a rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="w-10 h-10 bg-cosmic-teal rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="font-heading text-background text-xl font-bold">M</span>
             </div>
             <span className="font-heading text-xl md:text-2xl text-foreground">
@@ -54,8 +54,8 @@ export default function Header() {
                 to={link.path}
                 className={`font-paragraph text-base transition-colors ${
                   location.pathname === link.path
-                    ? 'text-accent-c-t-a'
-                    : 'text-foreground hover:text-accent-c-t-a'
+                    ? 'text-cosmic-teal'
+                    : 'text-foreground hover:text-cosmic-teal'
                 }`}
               >
                 {link.label}
@@ -67,14 +67,14 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href="tel:+12159482839"
-              className="flex items-center gap-2 text-foreground hover:text-accent-c-t-a transition-colors"
+              className="flex items-center gap-2 text-foreground hover:text-cosmic-teal transition-colors"
             >
               <Phone className="w-5 h-5" />
               <span className="font-paragraph text-base">(215)-948-2839</span>
             </a>
             <Link
               to="/free-audit"
-              className="bg-accent-c-t-a text-background font-heading font-bold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+              className="bg-cosmic-teal text-background font-heading font-bold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
             >
               Free Audit
             </Link>
@@ -107,8 +107,8 @@ export default function Header() {
                   to={link.path}
                   className={`font-paragraph text-lg py-2 transition-colors ${
                     location.pathname === link.path
-                      ? 'text-accent-c-t-a'
-                      : 'text-foreground hover:text-accent-c-t-a'
+                      ? 'text-cosmic-teal'
+                      : 'text-foreground hover:text-cosmic-teal'
                   }`}
                 >
                   {link.label}
@@ -116,14 +116,14 @@ export default function Header() {
               ))}
               <a
                 href="tel:+12159482839"
-                className="flex items-center gap-2 text-foreground hover:text-accent-c-t-a transition-colors py-2"
+                className="flex items-center gap-2 text-foreground hover:text-cosmic-teal transition-colors py-2"
               >
                 <Phone className="w-5 h-5" />
                 <span className="font-paragraph text-lg">(215)-948-2839</span>
               </a>
               <Link
                 to="/free-audit"
-                className="bg-accent-c-t-a text-background font-heading font-bold text-base px-6 py-3 rounded-lg hover:opacity-90 transition-opacity text-center mt-2"
+                className="bg-cosmic-teal text-background font-heading font-bold text-base px-6 py-3 rounded-lg hover:opacity-90 transition-opacity text-center mt-2"
               >
                 Get Your Free Audit
               </Link>
