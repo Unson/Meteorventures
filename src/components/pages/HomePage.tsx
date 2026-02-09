@@ -42,7 +42,7 @@ const SERVICES_DATA = [
 
 const TRUST_STATS = [
   { number: '10+', label: 'Years Combined Experience' },
-  { number: '50+', label: 'Small Businesses Helped' },
+  { number: '15+', label: 'Small Businesses Helped' },
   { number: '100%', label: 'Veteran-Owned & Operated' }
 ];
 
@@ -51,19 +51,22 @@ const INSIGHTS_DATA = [
     title: 'Why Most Local SEO Fails in 2026',
     excerpt: 'The landscape has shifted. Old tactics are now penalties. Here is what actually works for local visibility.',
     date: 'Oct 12, 2025',
-    category: 'Strategy'
+    category: 'Strategy',
+    image: 'https://static.wixstatic.com/media/ca33ee_2290f93bdd31454887e112a54f6d030e~mv2.png?originWidth=1280&originHeight=704'
   },
   {
     title: 'Case Study: Doubling Leads via Speed',
     excerpt: "How we fixed a Philly business's site speed and saw a 200% increase in qualified form submissions.",
     date: 'Sep 28, 2025',
-    category: 'Performance'
+    category: 'Performance',
+    image: 'https://static.wixstatic.com/media/ca33ee_a1b2c3d4e5f6g7h8i9j0~mv2.png?originWidth=1280&originHeight=704'
   },
   {
     title: 'Google Updates That Matter Right Now',
     excerpt: 'Ignore the noise. These are the three algorithm changes that actually impact small business rankings.',
     date: 'Sep 15, 2025',
-    category: 'Intelligence'
+    category: 'Intelligence',
+    image: 'https://static.wixstatic.com/media/ca33ee_k1l2m3n4o5p6q7r8s9t0~mv2.png?originWidth=1280&originHeight=704'
   }
 ];
 
@@ -249,10 +252,11 @@ export default function HomePage() {
       </section>
 
       {/* --- THE PROBLEM (The Void) --- */}
-      <section className="relative w-full py-32 bg-background overflow-hidden">
+      <section className="relative w-full py-32 bg-gradient-to-b from-background via-nebula-cyan/5 to-background overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-nebula-cyan/20 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,217,255,0.08),transparent_50%)] pointer-events-none" />
         
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <div className="absolute -inset-4 bg-nebula-cyan/5 blur-3xl rounded-full" />
@@ -308,8 +312,10 @@ export default function HomePage() {
       </section>
 
       {/* --- SERVICES (Precision Navigation) --- */}
-      <section className="relative w-full py-32 bg-secondary/10 border-y border-nebula-cyan/10">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+      <section className="relative w-full py-32 bg-gradient-to-b from-background via-nebula-magenta/5 to-background border-y border-nebula-cyan/10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(224,170,255,0.08),transparent_50%)] pointer-events-none" />
+        
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <SectionHeader 
             title="Precision Navigation" 
             subtitle="We don't guess. We execute calculated maneuvers to dominate your local market."
@@ -366,28 +372,13 @@ export default function HomePage() {
       </section>
 
       {/* --- VETERAN STORY (Trust) --- */}
-      <section className="relative w-full py-32 bg-background overflow-hidden">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full bg-gradient-to-l from-nebula-purple/10 to-transparent pointer-events-none" />
+      <section className="relative w-full py-32 bg-gradient-to-b from-background via-nebula-purple/5 to-background overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(146,39,221,0.1),transparent_50%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(0,217,255,0.08),transparent_50%)] pointer-events-none" />
         
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="relative">
-                <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-nebula-cyan/30" />
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-nebula-magenta/30" />
-                
-                <div className="relative aspect-square w-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                  <Image 
-                    src="https://static.wixstatic.com/media/ca33ee_f32c74bd1146466486a216772e29f17f~mv2.png?originWidth=768&originHeight=768" 
-                    alt="Shane, Founder of Meteor Ventures" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-7 order-1 lg:order-2">
+            <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 mb-6">
                 <Star className="w-5 h-5 text-nebula-cyan fill-nebula-cyan" />
                 <span className="font-heading text-sm tracking-widest uppercase text-nebula-cyan">Veteran Owned & Operated</span>
@@ -421,14 +412,17 @@ export default function HomePage() {
       </section>
 
       {/* --- INSIGHTS (Signals from the Void) --- */}
-      <section className="relative w-full py-32 bg-[#0f0f2e]">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+      <section className="relative w-full py-32 bg-gradient-to-b from-[#0f0f2e] via-[#1a1a3e] to-[#0f0f2e]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(114,9,183,0.1),transparent_60%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,217,255,0.08),transparent_50%)] pointer-events-none" />
+        
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
               <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-4">Signals from the Void</h2>
               <p className="font-paragraph text-foreground/60 max-w-xl">Tactical intelligence for navigating the digital landscape.</p>
             </div>
-            <Link to="/blog" className="px-6 py-3 border border-nebula-cyan/20 hover:bg-nebula-cyan/5 text-foreground font-heading text-sm tracking-wider uppercase transition-colors">
+            <Link to="/insights" className="px-6 py-3 border border-nebula-cyan/20 hover:bg-nebula-cyan/5 text-foreground font-heading text-sm tracking-wider uppercase transition-colors">
               View All Transmissions
             </Link>
           </div>
@@ -443,15 +437,16 @@ export default function HomePage() {
                 transition={{ delay: idx * 0.15, duration: 0.5 }}
                 className="group cursor-pointer"
               >
-                <div className="relative aspect-[16/9] mb-6 overflow-hidden bg-secondary/20 border border-nebula-cyan/10">
+                <div className="relative aspect-[16/9] mb-6 overflow-hidden bg-secondary/20 border border-nebula-cyan/10 rounded-sm">
                   <div className="absolute top-4 left-4 z-10 bg-background/80 backdrop-blur-md px-3 py-1 text-xs font-heading uppercase tracking-wider text-nebula-cyan border border-nebula-cyan/20">
                     {post.category}
                   </div>
                   <Image 
-                    src="https://static.wixstatic.com/media/ca33ee_2290f93bdd31454887e112a54f6d030e~mv2.png?originWidth=1280&originHeight=704" 
+                    src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
                 </div>
                 <div className="flex items-center gap-4 mb-3 text-xs font-paragraph text-foreground/40">
                   <span>{post.date}</span>
@@ -472,8 +467,8 @@ export default function HomePage() {
 
       {/* --- CTA (Initiate Sequence) --- */}
       <section className="relative w-full py-40 overflow-hidden flex items-center justify-center">
-        <div className="absolute inset-0 bg-nebula-cyan/5" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-nebula-cyan/5 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,217,255,0.08),transparent_60%)] pointer-events-none" />
         
         {/* Animated Grid Background */}
         <div className="absolute inset-0 opacity-20" 
