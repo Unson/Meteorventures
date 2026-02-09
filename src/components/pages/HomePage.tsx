@@ -217,7 +217,6 @@ export default function HomePage() {
   return (
     <div ref={containerRef} className="min-h-screen bg-background text-foreground overflow-clip selection:bg-cosmic-teal/30 selection:text-white">
       <Header />
-
       {/* --- HERO SECTION --- */}
       <section className="relative w-full min-h-[100vh] flex items-center justify-center overflow-hidden">
         {/* Dynamic Background Layers */}
@@ -282,7 +281,6 @@ export default function HomePage() {
         </div>
 
       </section>
-
       {/* --- THE PROBLEM (The Void) --- */}
       <section className="relative w-full py-32 bg-gradient-to-b from-background via-cosmic-teal/5 to-background overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cosmic-teal/20 to-transparent" />
@@ -302,9 +300,9 @@ export default function HomePage() {
                   className="w-full h-full object-cover opacity-100 hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-b from-cosmic-magenta/10 via-transparent to-cosmic-teal/10" />
+                <div className="absolute inset-0 bg-gradient-to-b from-cosmic-magenta/10 via-transparent to-cosmic-teal/10 rounded-sm" />
                 <div className="absolute bottom-8 left-8 right-8">
-                  <h3 className="font-heading text-4xl text-foreground mb-3 relative z-10 font-bold">The Invisible Void</h3>
+                  <h3 className="font-heading text-4xl text-foreground mb-3 relative z-10 font-bold rounded-[50px]">The Invisible Void</h3>
                   <p className="font-paragraph text-lg text-foreground/90 relative z-10 font-semibold">Where good businesses go to disappear.</p>
                 </div>
               </div>
@@ -345,7 +343,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- SERVICES (Precision Navigation) --- */}
       <section className="relative w-full py-32 bg-gradient-to-b from-background via-cosmic-magenta/5 to-background border-y border-cosmic-teal/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,0,255,0.08),transparent_50%)] pointer-events-none" />
@@ -405,7 +402,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- VETERAN STORY (Trust) --- */}
       <section className="relative w-full py-32 bg-gradient-to-b from-background via-cosmic-purple/5 to-background overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(195,0,255,0.1),transparent_50%)] pointer-events-none" />
@@ -445,7 +441,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- INSIGHTS (Signals from the Void) --- */}
       <section className="relative w-full py-32 bg-gradient-to-b from-secondary via-secondary/50 to-secondary">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(195,0,255,0.1),transparent_60%)] pointer-events-none" />
@@ -499,7 +494,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* --- CTA (Initiate Sequence) --- */}
       <section className="relative w-full py-40 overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-cosmic-teal/5 to-background" />
@@ -544,7 +538,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
