@@ -260,11 +260,11 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <div className="absolute -inset-4 bg-nebula-cyan/5 blur-3xl rounded-full" />
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-nebula-cyan/20">
+              <div className="relative aspect-[4/5] w-1/2 overflow-hidden rounded-sm border border-nebula-cyan/20">
                  <Image 
-                  src="https://static.wixstatic.com/media/ca33ee_f0a1ba9b2fce4dd38d4a911b7fca9ddf~mv2.png?originWidth=768&originHeight=960" 
+                  src="https://static.wixstatic.com/media/ca33ee_1d9aab7a71bf4125b0191d81a37a9541~mv2.png?originWidth=384&originHeight=448" 
                   alt="Abstract representation of digital void" 
-                  className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
