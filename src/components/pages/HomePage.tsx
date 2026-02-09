@@ -55,7 +55,7 @@ const INSIGHTS_DATA = [
   },
   {
     title: 'Case Study: Doubling Leads via Speed',
-    excerpt: 'How we fixed a Philly business’s site speed and saw a 200% increase in qualified form submissions.',
+    excerpt: "How we fixed a Philly business's site speed and saw a 200% increase in qualified form submissions.",
     date: 'Sep 28, 2025',
     category: 'Performance'
   },
@@ -71,21 +71,28 @@ const INSIGHTS_DATA = [
 
 const StarField = () => {
   // Static star generation to prevent hydration mismatch
-  const stars = Array.from({ length: 50 }).map((_, i) => ({
-    id: i,
-    top: `${Math.random() * 100}%`,
-    left: `${Math.random() * 100}%`,
-    size: Math.random() * 2 + 1,
-    duration: Math.random() * 3 + 2,
-    delay: Math.random() * 2
-  }));
+  const stars = Array.from({ length: 50 }).map((_, i) => (
+    {
+      id: i,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      size: Math.random() * 2 + 1,
+      duration: Math.random() * 3 + 2,
+      delay: Math.random() * 2,
+      color: ['nebula-cyan', 'nebula-magenta', 'nebula-bright-blue'][Math.floor(Math.random() * 3)]
+    }
+  ));
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {stars.map((star) => (
         <motion.div
           key={star.id}
-          className="absolute rounded-full bg-white/20"
+          className={`absolute rounded-full ${
+            star.color === 'nebula-cyan' ? 'bg-nebula-cyan/30' :
+            star.color === 'nebula-magenta' ? 'bg-nebula-magenta/30' :
+            'bg-nebula-bright-blue/30'
+          }`}
           style={{
             top: star.top,
             left: star.left,
@@ -124,7 +131,7 @@ const MeteorEffect = () => {
             left: 50%;
             height: 2px;
             width: 100px;
-            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+            background: linear-gradient(to right, rgba(0, 217, 255, 0) 0%, rgba(0, 217, 255, 1) 100%);
             animation: meteor 3s linear infinite;
             opacity: 0;
           }
@@ -183,9 +190,9 @@ export default function HomePage() {
           style={{ y: yBackground }}
           className="absolute inset-0 z-0"
         >
-          <div className="absolute inset-0 bg-[#000022]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/20 to-background" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(95,99,143,0.15),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[#0a0e27]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-nebula-violet/5 via-nebula-purple/5 to-background" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(146,39,221,0.08),transparent_70%)]" />
           <StarField />
           <MeteorEffect />
         </motion.div>
@@ -199,27 +206,27 @@ export default function HomePage() {
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/30 border border-white/10 mb-8 backdrop-blur-sm">
-                  <span className="w-2 h-2 rounded-full bg-accent-c-t-a animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/30 border border-nebula-cyan/20 mb-8 backdrop-blur-sm">
+                  <span className="w-2 h-2 rounded-full bg-nebula-cyan animate-pulse" />
                   <span className="font-heading text-sm tracking-widest uppercase text-foreground/80">System Operational</span>
                 </div>
                 
                 <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-foreground mb-8 leading-[0.9] tracking-tighter">
                   Your market's <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-foreground to-foreground/50">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-nebula-cyan via-nebula-magenta to-nebula-pink">
                     out there.
                   </span> <br />
-                  <span className="text-accent-c-t-a">We'll find it.</span>
+                  <span className="text-nebula-cyan">We'll find it.</span>
                 </h1>
 
-                <p className="font-paragraph text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl leading-relaxed border-l-2 border-accent-c-t-a/50 pl-6">
+                <p className="font-paragraph text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl leading-relaxed border-l-2 border-nebula-cyan/50 pl-6">
                   Small businesses are drifting in the void—invisible on Google, burning cash on ads, and losing leads to slow sites. We provide the gravity you need.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
                   <Link
                     to="/free-audit"
-                    className="group relative inline-flex items-center justify-center px-8 py-4 bg-accent-c-t-a text-background font-heading font-bold text-lg tracking-wide overflow-hidden rounded-sm transition-transform hover:scale-[1.02]"
+                    className="group relative inline-flex items-center justify-center px-8 py-4 bg-nebula-cyan text-background font-heading font-bold text-lg tracking-wide overflow-hidden rounded-sm transition-transform hover:scale-[1.02]"
                   >
                     <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                     <span className="relative flex items-center gap-2">
@@ -228,7 +235,7 @@ export default function HomePage() {
                   </Link>
                   <Link
                     to="/services"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-foreground/20 text-foreground font-heading font-bold text-lg tracking-wide hover:bg-foreground/5 transition-colors rounded-sm"
+                    className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-nebula-magenta/40 text-foreground font-heading font-bold text-lg tracking-wide hover:bg-nebula-magenta/5 transition-colors rounded-sm"
                   >
                     Explore Capabilities
                   </Link>
@@ -243,13 +250,13 @@ export default function HomePage() {
 
       {/* --- THE PROBLEM (The Void) --- */}
       <section className="relative w-full py-32 bg-background overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-foreground/20 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-nebula-cyan/20 to-transparent" />
         
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
-              <div className="absolute -inset-4 bg-accent-c-t-a/5 blur-3xl rounded-full" />
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-white/5">
+              <div className="absolute -inset-4 bg-nebula-cyan/5 blur-3xl rounded-full" />
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-nebula-cyan/20">
                  <Image 
                   src="https://static.wixstatic.com/media/ca33ee_f0a1ba9b2fce4dd38d4a911b7fca9ddf~mv2.png?originWidth=768&originHeight=960" 
                   alt="Abstract representation of digital void" 
@@ -257,7 +264,7 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
-                  <div className="font-heading text-6xl text-white/10 select-none absolute -top-12 -left-4">01</div>
+                  <div className="font-heading text-6xl text-nebula-cyan/10 select-none absolute -top-12 -left-4">01</div>
                   <h3 className="font-heading text-3xl text-foreground mb-2 relative z-10">The Invisible Void</h3>
                   <p className="font-paragraph text-foreground/70 relative z-10">Where good businesses go to disappear.</p>
                 </div>
@@ -285,11 +292,11 @@ export default function HomePage() {
                     transition={{ delay: idx * 0.2, duration: 0.6 }}
                     className="flex gap-6 group"
                   >
-                    <div className="w-12 h-12 flex-shrink-0 rounded-full border border-accent-c-t-a/30 flex items-center justify-center group-hover:bg-accent-c-t-a/10 transition-colors">
-                      <span className="font-heading text-accent-c-t-a">{`0${idx + 1}`}</span>
+                    <div className="w-12 h-12 flex-shrink-0 rounded-full border border-nebula-cyan/30 flex items-center justify-center group-hover:bg-nebula-cyan/10 transition-colors">
+                      <span className="font-heading text-nebula-cyan">{`0${idx + 1}`}</span>
                     </div>
                     <div>
-                      <h4 className="font-heading text-xl text-foreground mb-2 group-hover:text-accent-c-t-a transition-colors">{item.title}</h4>
+                      <h4 className="font-heading text-xl text-foreground mb-2 group-hover:text-nebula-cyan transition-colors">{item.title}</h4>
                       <p className="font-paragraph text-foreground/60 leading-relaxed">{item.desc}</p>
                     </div>
                   </motion.div>
@@ -301,7 +308,7 @@ export default function HomePage() {
       </section>
 
       {/* --- SERVICES (Precision Navigation) --- */}
-      <section className="relative w-full py-32 bg-secondary/10 border-y border-white/5">
+      <section className="relative w-full py-32 bg-secondary/10 border-y border-nebula-cyan/10">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
           <SectionHeader 
             title="Precision Navigation" 
@@ -316,11 +323,17 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="group relative bg-background border border-white/5 p-8 hover:border-accent-c-t-a/50 transition-all duration-300 hover:-translate-y-2"
+                className={`group relative bg-background border p-8 transition-all duration-300 hover:-translate-y-2 ${
+                  index % 2 === 0 ? 'border-nebula-cyan/20 hover:border-nebula-magenta/50' : 'border-nebula-magenta/20 hover:border-nebula-cyan/50'
+                }`}
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-accent-c-t-a/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                  index % 2 === 0 ? 'bg-gradient-to-b from-nebula-magenta/5 to-transparent' : 'bg-gradient-to-b from-nebula-cyan/5 to-transparent'
+                }`} />
                 
-                <service.icon className="w-12 h-12 text-accent-c-t-a mb-8 group-hover:scale-110 transition-transform duration-300" />
+                <service.icon className={`w-12 h-12 mb-8 group-hover:scale-110 transition-transform duration-300 ${
+                  index % 2 === 0 ? 'text-nebula-cyan' : 'text-nebula-magenta'
+                }`} />
                 
                 <h3 className="font-heading text-2xl text-foreground mb-4 group-hover:text-white transition-colors">
                   {service.title}
@@ -330,7 +343,9 @@ export default function HomePage() {
                   {service.description}
                 </p>
                 
-                <div className="h-px w-full bg-white/10 mb-6 group-hover:bg-accent-c-t-a/30 transition-colors" />
+                <div className={`h-px w-full mb-6 transition-colors ${
+                  index % 2 === 0 ? 'bg-nebula-cyan/10 group-hover:bg-nebula-magenta/30' : 'bg-nebula-magenta/10 group-hover:bg-nebula-cyan/30'
+                }`} />
                 
                 <p className="font-paragraph text-sm text-foreground/50 italic">
                   {service.detail}
@@ -342,7 +357,7 @@ export default function HomePage() {
           <div className="mt-16 text-center">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 text-accent-c-t-a font-heading font-bold text-lg hover:text-white transition-colors border-b border-accent-c-t-a/30 hover:border-white pb-1"
+              className="inline-flex items-center gap-2 text-nebula-cyan font-heading font-bold text-lg hover:text-nebula-magenta transition-colors border-b border-nebula-cyan/30 hover:border-nebula-magenta pb-1"
             >
               Explore Full Mission Parameters <ChevronRight className="w-4 h-4" />
             </Link>
@@ -352,14 +367,14 @@ export default function HomePage() {
 
       {/* --- VETERAN STORY (Trust) --- */}
       <section className="relative w-full py-32 bg-background overflow-hidden">
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full bg-gradient-to-l from-secondary/20 to-transparent pointer-events-none" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full bg-gradient-to-l from-nebula-purple/10 to-transparent pointer-events-none" />
         
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 order-2 lg:order-1">
               <div className="relative">
-                <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-accent-c-t-a/30" />
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-accent-c-t-a/30" />
+                <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-nebula-cyan/30" />
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-nebula-magenta/30" />
                 
                 <div className="relative aspect-square w-full overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
                   <Image 
@@ -374,13 +389,13 @@ export default function HomePage() {
 
             <div className="lg:col-span-7 order-1 lg:order-2">
               <div className="inline-flex items-center gap-2 mb-6">
-                <Star className="w-5 h-5 text-accent-c-t-a fill-accent-c-t-a" />
-                <span className="font-heading text-sm tracking-widest uppercase text-accent-c-t-a">Veteran Owned & Operated</span>
+                <Star className="w-5 h-5 text-nebula-cyan fill-nebula-cyan" />
+                <span className="font-heading text-sm tracking-widest uppercase text-nebula-cyan">Veteran Owned & Operated</span>
               </div>
               
               <h2 className="font-heading text-4xl md:text-6xl text-foreground mb-8">
                 Forged in Discipline. <br />
-                <span className="text-foreground/50">Driven by Results.</span>
+                <span className="text-nebula-magenta">Driven by Results.</span>
               </h2>
               
               <div className="space-y-6 font-paragraph text-lg text-foreground/80 leading-relaxed max-w-3xl">
@@ -392,10 +407,10 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 gap-8 mt-12 border-t border-white/10 pt-12">
+              <div className="grid grid-cols-3 gap-8 mt-12 border-t border-nebula-cyan/10 pt-12">
                 {TRUST_STATS.map((stat, idx) => (
                   <div key={idx}>
-                    <div className="font-heading text-4xl md:text-5xl text-white mb-2">{stat.number}</div>
+                    <div className="font-heading text-4xl md:text-5xl text-nebula-cyan mb-2">{stat.number}</div>
                     <div className="font-paragraph text-sm text-foreground/50 uppercase tracking-wider">{stat.label}</div>
                   </div>
                 ))}
@@ -406,14 +421,14 @@ export default function HomePage() {
       </section>
 
       {/* --- INSIGHTS (Signals from the Void) --- */}
-      <section className="relative w-full py-32 bg-[#05052a]">
+      <section className="relative w-full py-32 bg-[#0f0f2e]">
         <div className="max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
               <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-4">Signals from the Void</h2>
               <p className="font-paragraph text-foreground/60 max-w-xl">Tactical intelligence for navigating the digital landscape.</p>
             </div>
-            <Link to="/blog" className="px-6 py-3 border border-white/10 hover:bg-white/5 text-foreground font-heading text-sm tracking-wider uppercase transition-colors">
+            <Link to="/blog" className="px-6 py-3 border border-nebula-cyan/20 hover:bg-nebula-cyan/5 text-foreground font-heading text-sm tracking-wider uppercase transition-colors">
               View All Transmissions
             </Link>
           </div>
@@ -428,8 +443,8 @@ export default function HomePage() {
                 transition={{ delay: idx * 0.15, duration: 0.5 }}
                 className="group cursor-pointer"
               >
-                <div className="relative aspect-[16/9] mb-6 overflow-hidden bg-secondary/20">
-                  <div className="absolute top-4 left-4 z-10 bg-background/80 backdrop-blur-md px-3 py-1 text-xs font-heading uppercase tracking-wider text-accent-c-t-a border border-accent-c-t-a/20">
+                <div className="relative aspect-[16/9] mb-6 overflow-hidden bg-secondary/20 border border-nebula-cyan/10">
+                  <div className="absolute top-4 left-4 z-10 bg-background/80 backdrop-blur-md px-3 py-1 text-xs font-heading uppercase tracking-wider text-nebula-cyan border border-nebula-cyan/20">
                     {post.category}
                   </div>
                   <Image 
@@ -440,10 +455,10 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-4 mb-3 text-xs font-paragraph text-foreground/40">
                   <span>{post.date}</span>
-                  <span className="w-1 h-1 rounded-full bg-accent-c-t-a" />
+                  <span className="w-1 h-1 rounded-full bg-nebula-magenta" />
                   <span>By Shane</span>
                 </div>
-                <h3 className="font-heading text-xl md:text-2xl text-foreground mb-3 group-hover:text-accent-c-t-a transition-colors line-clamp-2">
+                <h3 className="font-heading text-xl md:text-2xl text-foreground mb-3 group-hover:text-nebula-cyan transition-colors line-clamp-2">
                   {post.title}
                 </h3>
                 <p className="font-paragraph text-foreground/60 line-clamp-3 text-sm leading-relaxed">
@@ -457,13 +472,13 @@ export default function HomePage() {
 
       {/* --- CTA (Initiate Sequence) --- */}
       <section className="relative w-full py-40 overflow-hidden flex items-center justify-center">
-        <div className="absolute inset-0 bg-accent-c-t-a/10" />
+        <div className="absolute inset-0 bg-nebula-cyan/5" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
         
         {/* Animated Grid Background */}
         <div className="absolute inset-0 opacity-20" 
              style={{ 
-               backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)', 
+               backgroundImage: 'linear-gradient(rgba(0, 217, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 217, 255, 0.1) 1px, transparent 1px)', 
                backgroundSize: '50px 50px' 
              }} 
         />
@@ -485,13 +500,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link
                 to="/free-audit"
-                className="w-full sm:w-auto px-10 py-5 bg-accent-c-t-a text-background font-heading font-bold text-xl rounded-sm hover:bg-white transition-colors shadow-[0_0_30px_-5px_rgba(196,122,58,0.4)]"
+                className="w-full sm:w-auto px-10 py-5 bg-nebula-cyan text-background font-heading font-bold text-xl rounded-sm hover:bg-nebula-magenta transition-colors"
               >
                 Initiate Free Audit
               </Link>
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-10 py-5 bg-transparent border border-foreground/20 text-foreground font-heading font-bold text-xl rounded-sm hover:bg-foreground/10 transition-colors"
+                className="w-full sm:w-auto px-10 py-5 bg-transparent border border-nebula-magenta/40 text-foreground font-heading font-bold text-xl rounded-sm hover:bg-nebula-magenta/10 transition-colors"
               >
                 Contact HQ
               </Link>

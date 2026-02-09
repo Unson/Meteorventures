@@ -34,7 +34,7 @@ export default function AboutPage() {
       
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-background to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-nebula-purple/20 via-background to-background" />
         
         <div className="relative z-10 max-w-[100rem] mx-auto px-6 md:px-12">
           <motion.div
@@ -54,7 +54,7 @@ export default function AboutPage() {
       </section>
 
       {/* Shane's Story */}
-      <section className="w-full bg-secondary/30 py-20">
+      <section className="w-full bg-nebula-violet/5 py-20 border-y border-nebula-cyan/10">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -84,10 +84,10 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-primary/40 border border-accent-c-t-a/30 rounded-lg p-8"
+              className="bg-primary/40 border border-nebula-cyan/30 rounded-lg p-8"
             >
               <div className="flex items-center gap-4 mb-6">
-                <Shield className="w-12 h-12 text-accent-c-t-a" />
+                <Shield className="w-12 h-12 text-nebula-cyan" />
                 <div>
                   <h3 className="font-heading text-2xl text-foreground">Shane</h3>
                   <p className="font-paragraph text-base text-foreground/70">Founder & Lead Strategist</p>
@@ -95,19 +95,19 @@ export default function AboutPage() {
               </div>
               <div className="space-y-3 font-paragraph text-base text-foreground/80">
                 <p className="flex items-start gap-2">
-                  <span className="text-accent-c-t-a mt-1">•</span>
+                  <span className="text-nebula-cyan mt-1">•</span>
                   <span>U.S. Military Veteran</span>
                 </p>
                 <p className="flex items-start gap-2">
-                  <span className="text-accent-c-t-a mt-1">•</span>
+                  <span className="text-nebula-magenta mt-1">•</span>
                   <span>10+ Years Digital Marketing Experience</span>
                 </p>
                 <p className="flex items-start gap-2">
-                  <span className="text-accent-c-t-a mt-1">•</span>
+                  <span className="text-nebula-bright-blue mt-1">•</span>
                   <span>Specialized in Local SEO & Technical Optimization</span>
                 </p>
                 <p className="flex items-start gap-2">
-                  <span className="text-accent-c-t-a mt-1">•</span>
+                  <span className="text-nebula-cyan mt-1">•</span>
                   <span>Based in Philadelphia, PA</span>
                 </p>
               </div>
@@ -142,9 +142,13 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-secondary/40 border border-foreground/10 rounded-lg p-8 hover:border-accent-c-t-a/50 transition-colors"
+                className={`bg-secondary/40 border rounded-lg p-8 transition-colors ${
+                  index % 2 === 0 ? 'border-nebula-cyan/20 hover:border-nebula-cyan/50' : 'border-nebula-magenta/20 hover:border-nebula-magenta/50'
+                }`}
               >
-                <value.icon className="w-12 h-12 text-accent-c-t-a mb-6" />
+                <value.icon className={`w-12 h-12 mb-6 ${
+                  index % 2 === 0 ? 'text-nebula-cyan' : 'text-nebula-magenta'
+                }`} />
                 <h3 className="font-heading text-2xl text-foreground mb-4">
                   {value.title}
                 </h3>
@@ -158,7 +162,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full bg-gradient-to-b from-primary to-secondary py-20">
+      <section className="w-full bg-gradient-to-b from-nebula-purple/10 to-nebula-violet/5 py-20">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -174,7 +178,7 @@ export default function AboutPage() {
             </p>
             <Link
               to="/free-audit"
-              className="inline-block bg-accent-c-t-a text-background font-heading font-bold text-lg px-10 py-5 rounded-lg hover:opacity-90 transition-opacity"
+              className="inline-block bg-nebula-cyan text-background font-heading font-bold text-lg px-10 py-5 rounded-lg hover:bg-nebula-magenta transition-colors"
             >
               Get Your Free Audit
             </Link>
