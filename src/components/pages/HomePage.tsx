@@ -422,10 +422,10 @@ export default function HomePage() {
               
               <div className="space-y-6 font-paragraph text-lg text-foreground/80 leading-relaxed max-w-3xl">
                 <p>
-                  I started Meteor Ventures because I was tired of seeing good, honest local businesses get left behind. You built something real, but in the digital age, being good isn't enough. You have to be visible.
+                  Meteor Ventures started from a moment of pure frustration. I was just trying to buy a specific set of bass strings and ended up hopping through endless websites that were slow, confusing, and hard to use. It shouldn't take 20 minutes to buy something simple. That experience flipped a switch—if I was struggling this much, how many other customers were too? And how many businesses were losing sales because their websites were getting in the way?
                 </p>
                 <p>
-                  We bring the same mission-focused discipline from military service to your marketing. No excuses. No "fluff" metrics. Just a clear objective and the relentless execution required to achieve it.
+                  Instead of complaining, I got to work. I taught myself how websites function, how search engines decide what gets seen, and what actually keeps people engaged. That curiosity turned into a mission, and that mission became Meteor Ventures LLC. Today, I help businesses uncover what's holding their websites back and fix it—through better SEO, clearer content, and smoother user experiences. Because great products, great service, and great people deserve to be found.
                 </p>
               </div>
 
