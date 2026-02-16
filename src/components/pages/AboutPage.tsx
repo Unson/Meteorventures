@@ -24,7 +24,7 @@ export default function AboutPage() {
     {
       icon: Shield,
       title: 'Transparent & Accountable',
-      description: 'No fluff, no excuses. We show you exactly what we\\'re doing and why it matters for your bottom line.'
+      description: 'No fluff, no excuses. We show you exactly what we\'re doing and why it matters for your bottom line.'
     }
   ];
 
