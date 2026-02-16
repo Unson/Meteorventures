@@ -288,7 +288,7 @@ export default function HomePage() {
         
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative flex justify-center lg:justify-start">
+            <div className="relative flex justify-center lg:justify-end pr-0 lg:pr-12">
               {/* Enhanced dramatic glow effect */}
               <div className="absolute -inset-12 bg-gradient-to-r from-cosmic-teal/40 via-cosmic-magenta/30 to-cosmic-teal/40 blur-3xl rounded-full animate-pulse" />
               <div className="absolute -inset-16 bg-gradient-to-r from-cosmic-magenta/20 via-cosmic-purple/15 to-cosmic-magenta/20 blur-2xl rounded-full opacity-60 animate-pulse" style={{ animationDelay: '0.5s' }} />
