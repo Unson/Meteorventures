@@ -44,10 +44,10 @@ export default function AboutPage() {
             className="max-w-4xl"
           >
             <h1 className="font-heading text-5xl md:text-7xl text-foreground mb-6">
-              Built by a Veteran Who Got Tired of Watching Good Businesses Stay Invisible
+              Built to Fix What's Broken
             </h1>
             <p className="font-paragraph text-lg md:text-xl text-foreground/80 leading-relaxed">
-              Meteor Ventures was founded by Shane, a veteran who transitioned from military service to digital marketing and saw a problem: too many solid local businesses were getting crushed online because they didn't understand SEO, wasted money on bad ads, or had websites that barely worked.
+              I started Meteor Ventures because I kept seeing the same problem: solid businesses getting buried online. Bad websites, wasted ad spend, and zero visibility on Google. It's frustrating to watch good people struggle with something that's actually fixable.
             </p>
           </motion.div>
         </div>
