@@ -350,7 +350,7 @@ export default function HomePage() {
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <SectionHeader 
             title="Precision Navigation" 
-            subtitle="We don't guess. We execute calculated maneuvers to dominate your local market."
+            subtitle="We don't guess. We deploy precise, data-driven strategies to win your local market."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

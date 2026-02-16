@@ -117,13 +117,30 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-foreground/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
             <p className="font-paragraph text-sm text-foreground/60 text-center md:text-left">
               © {currentYear} Meteor Ventures LLC. All rights reserved.
             </p>
             <p className="font-paragraph text-sm text-foreground/60 text-center md:text-right">
               Navigating the unseen forces of search algorithms since 2024.
             </p>
+          </div>
+
+          {/* Simple Footer Links Section */}
+          <div className="pt-8 border-t border-foreground/10">
+            <nav className="flex flex-wrap gap-4 justify-center md:justify-start">
+              <a href="/" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Home</a>
+              <span className="text-foreground/30">•</span>
+              <a href="/services" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Services</a>
+              <span className="text-foreground/30">•</span>
+              <a href="/about" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">About</a>
+              <span className="text-foreground/30">•</span>
+              <a href="/insights" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Insights</a>
+              <span className="text-foreground/30">•</span>
+              <a href="/partners" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Partners</a>
+              <span className="text-foreground/30">•</span>
+              <a href="/free-audit" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Book Consultation</a>
+            </nav>
           </div>
         </div>
       </div>
