@@ -255,7 +255,7 @@ export default function HomePage() {
                 </h1>
 
                 <p className="font-paragraph text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl leading-relaxed border-l-2 border-cosmic-teal/50 pl-6">
-                  Small businesses are drifting in the void—invisible on Google, burning cash on ads, and losing leads to slow sites. We provide the gravity you need.
+                  Small businesses are drifting in the void—invisible on Google, burning cash on ads, and losing leads to slow sites. We provide the gravity you need through proven local SEO strategies and technical optimization.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
@@ -317,9 +317,9 @@ export default function HomePage() {
               
               <div className="space-y-12">
                 {[
-                  { title: "Invisible Signals", desc: "You have the best product, but Google doesn't know you exist. Your competitors are winning simply because they are louder." },
-                  { title: "Resource Drain", desc: "Pouring budget into ads that land on slow, confusing pages. It's like fueling a rocket with a hull breach." },
-                  { title: "Lost Transmissions", desc: "Potential customers visit, wait 3 seconds for a load, and leave. You never even knew they were there." }
+                  { title: "Invisible Signals", desc: "You have the best product, but Google doesn't know you exist. Your competitors are winning simply because they are louder. Without proper on-page SEO and local SEO optimization, your business remains hidden from customers actively searching for your services." },
+                  { title: "Resource Drain", desc: "Pouring budget into ads that land on slow, confusing pages. It's like fueling a rocket with a hull breach. Technical SEO issues and poor site performance drain your marketing budget while off-page SEO efforts go to waste." },
+                  { title: "Lost Transmissions", desc: "Potential customers visit, wait 3 seconds for a load, and leave. You never even knew they were there. Technical SEO problems and slow load times are costing you leads every single day." }
                 ].map((item, idx) => (
                   <motion.div 
                     key={idx}
