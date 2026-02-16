@@ -89,8 +89,7 @@ export default function AboutPage() {
               <div className="flex items-center gap-4 mb-6">
                 <Shield className="w-12 h-12 text-nebula-cyan" />
                 <div>
-                  <h3 className="font-heading text-2xl text-foreground">Shane</h3>
-                  <p className="font-paragraph text-base text-foreground/70">Founder & Lead Strategist</p>
+                  <h3 className="font-heading text-2xl text-foreground">Shane McDaniels, Founder and Lead Strategist</h3>
                 </div>
               </div>
               <div className="space-y-3 font-paragraph text-base text-foreground/80">
