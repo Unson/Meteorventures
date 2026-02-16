@@ -302,8 +302,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-b from-cosmic-magenta/10 via-transparent to-cosmic-teal/10 rounded-sm" />
                 <div className="absolute bottom-8 left-8 right-8">
-                  <h3 className="font-heading text-4xl text-foreground mb-3 relative z-10 font-bold rounded-[50px]">The Invisible Void</h3>
-                  <p className="font-paragraph text-lg text-foreground/90 relative z-10 font-semibold">No matter where your business is, we want customers to find you.</p>
+                  <p className="font-paragraph text-2xl md:text-3xl text-foreground/90 relative z-10 font-semibold">No matter where your business is, we want customers to find you.</p>
                 </div>
               </div>
             </div>
