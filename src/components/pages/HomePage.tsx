@@ -416,15 +416,16 @@ export default function HomePage() {
               </div>
               
               <h2 className="font-heading text-4xl md:text-6xl text-foreground mb-8">
-                How This Started
+                Forged in Discipline. <br />
+                <span className="text-cosmic-magenta">Driven by Results.</span>
               </h2>
               
               <div className="space-y-6 font-paragraph text-lg text-foreground/80 leading-relaxed max-w-3xl">
                 <p>
-                  I started Meteor Ventures because I got tired of watching good businesses lose to bad websites. I was trying to buy bass strings online and ended up frustrated—slow pages, confusing navigation, broken checkout. If I was struggling, so were their customers. And they had no idea how much money they were leaving on the table.
+                  Meteor Ventures started from a moment of pure frustration. I was just trying to buy a specific set of bass strings and ended up hopping through endless websites that were slow, confusing, and hard to use. It shouldn't take 20 minutes to buy something simple. That experience flipped a switch—if I was struggling this much, how many other customers were too? And how many businesses were losing sales because their websites were getting in the way?
                 </p>
                 <p>
-                  So I learned how this stuff actually works. SEO, site speed, user experience, conversion optimization. Turned out most businesses weren't failing because they didn't care—they just didn't know what was broken or how to fix it. That's what I do now. I find what's holding your business back and fix it. Simple as that.
+                  Instead of complaining, I got to work. I taught myself how websites function, how search engines decide what gets seen, and what actually keeps people engaged. That curiosity turned into a mission, and that mission became Meteor Ventures LLC. Today, I help businesses uncover what's holding their websites back and fix it—through better SEO, clearer content, and smoother user experiences. Because great products, great service, and great people deserve to be found.
                 </p>
               </div>
 
