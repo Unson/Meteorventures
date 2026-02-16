@@ -7,11 +7,6 @@ import Footer from '@/components/Footer';
 export default function AboutPage() {
   const values = [
     {
-      icon: Shield,
-      title: 'Veteran Discipline',
-      description: 'We bring military precision and mission-focused execution to every campaign. No shortcuts, no excuses.'
-    },
-    {
       icon: Target,
       title: 'Results-Driven',
       description: 'We measure success by one metric: does it bring in customers? Everything else is noise.'
@@ -24,7 +19,12 @@ export default function AboutPage() {
     {
       icon: TrendingUp,
       title: 'Continuous Improvement',
-      description: 'Search algorithms change constantly. We stay ahead so your business doesn\'t fall behind.'
+      description: "Search algorithms change constantly. We stay ahead so your business doesn't fall behind."
+    },
+    {
+      icon: Shield,
+      title: 'Transparent & Accountable',
+      description: 'No fluff, no excuses. We show you exactly what we\\'re doing and why it matters for your bottom line.'
     }
   ];
 
