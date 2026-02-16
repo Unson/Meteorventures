@@ -295,7 +295,7 @@ export default function HomePage() {
               
               <div className="relative aspect-[4/5] w-4/5 md:w-2/3 overflow-hidden rounded-lg border-2 border-cosmic-teal/60 shadow-2xl shadow-cosmic-teal/50">
                  <Image 
-                  src="https://static.wixstatic.com/media/ca33ee_1d9aab7a71bf4125b0191d81a37a9541~mv2.png?originWidth=384&originHeight=448" 
+                  src="https://static.wixstatic.com/media/ca33ee_a75866ae73f34e95a8f1a185c75bed6d~mv2.jpg" 
                   alt="Abstract representation of digital void" 
                   className="w-full h-full object-cover opacity-100 hover:scale-110 transition-transform duration-700"
                 />
