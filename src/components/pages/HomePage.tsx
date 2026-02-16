@@ -291,8 +291,7 @@ export default function HomePage() {
             <div className="relative flex justify-center lg:justify-end pr-0 lg:pr-12">
               {/* Enhanced dramatic glow effect */}
               <div className="absolute -inset-12 bg-gradient-to-r from-cosmic-teal/40 via-cosmic-magenta/30 to-cosmic-teal/40 blur-3xl rounded-full animate-pulse" />
-              <div className="absolute -inset-16 bg-gradient-to-r from-cosmic-magenta/20 via-cosmic-purple/15 to-cosmic-magenta/20 blur-2xl rounded-full opacity-60 animate-pulse" style={{ animationDelay: '0.5s' }} />
-              
+
               <div className="relative aspect-[4/5] w-4/5 md:w-2/3 overflow-hidden rounded-lg border-2 border-cosmic-teal/60 shadow-2xl shadow-cosmic-teal/50">
                  <Image 
                   src="https://static.wixstatic.com/media/ca33ee_a75866ae73f34e95a8f1a185c75bed6d~mv2.jpg" 
