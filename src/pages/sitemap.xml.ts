@@ -4,7 +4,7 @@ import type { Insights } from '@/entities';
 export const prerender = true;
 
 export async function GET() {
-  const baseUrl = 'https://www.meteorventuresllc.com';
+  const baseUrl = 'https://flow.meteorventuresllc.com';
   
   // Fetch all insights for dynamic URLs
   let insightUrls = '';
