@@ -292,7 +292,7 @@ export default function HomePage() {
               {/* Enhanced dramatic glow effect */}
               <div className="absolute -inset-12 bg-gradient-to-r from-cosmic-teal/40 via-cosmic-magenta/30 to-cosmic-teal/40 blur-3xl rounded-full animate-pulse" />
 
-              <div className="relative aspect-[4/5] w-4/5 md:w-2/3 overflow-hidden rounded-lg border-2 border-cosmic-teal/60 shadow-2xl shadow-cosmic-teal/50">
+              <div className="relative aspect-[4/5] w-4/5 md:w-2/3 overflow-hidden rounded-lg border-2 border-cosmic-teal/60 shadow-2xl shadow-cosmic-teal/50 opacity-[1]">
                  <Image 
                   src="https://static.wixstatic.com/media/ca33ee_a75866ae73f34e95a8f1a185c75bed6d~mv2.jpg" 
                   alt="Abstract representation of digital void" 
