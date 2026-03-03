@@ -194,7 +194,7 @@ const SectionHeader = ({ title, subtitle, align = 'center' }: { title: string, s
         <div className={`h-1 w-24 bg-cosmic-teal mb-6 ${align === 'center' ? 'mx-auto' : align === 'right' ? 'ml-auto' : ''}`} />
       )}
       {subtitle && (
-        <p className="font-paragraph text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed mx-auto">
+        <p className="font-paragraph text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed">
           {subtitle}
         </p>
       )}
@@ -288,11 +288,11 @@ export default function HomePage() {
         
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative flex justify-center lg:justify-end pr-0 lg:pr-6">
+            <div className="relative flex justify-center lg:justify-end pr-0 lg:pr-12">
               {/* Enhanced dramatic glow effect */}
               <div className="absolute -inset-12 bg-gradient-to-r from-cosmic-teal/40 via-cosmic-magenta/30 to-cosmic-teal/40 blur-3xl rounded-full animate-pulse" />
 
-              <div className="relative aspect-[4/5] w-4/5 md:w-2/3 overflow-hidden rounded-lg border-2 border-cosmic-teal/60 shadow-2xl shadow-cosmic-teal/50 opacity-[1]">
+              <div className="relative aspect-[4/5] w-4/5 md:w-2/3 overflow-hidden rounded-lg border-2 border-cosmic-teal/60 shadow-2xl shadow-cosmic-teal/50">
                  <Image 
                   src="https://static.wixstatic.com/media/ca33ee_a75866ae73f34e95a8f1a185c75bed6d~mv2.jpg" 
                   alt="Abstract representation of digital void" 
