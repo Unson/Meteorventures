@@ -32,8 +32,8 @@ export default function InsightsPage() {
       setHasNext(result.hasNext);
       setNextSkip(result.nextSkip);
       setIsLoading(false);
-    } catch (error) {
-      console.error('Error loading insights:', error);
+    } catch {
+      // Silently handle errors
       setIsLoading(false);
     }
   };

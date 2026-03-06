@@ -25,8 +25,8 @@ export async function GET() {
         })
         .join('\n');
     }
-  } catch (error) {
-    console.error('Error fetching insights for sitemap:', error);
+  } catch {
+    // Silently handle errors - sitemap will still be generated with static URLs
   }
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
