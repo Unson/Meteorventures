@@ -194,7 +194,7 @@ const SectionHeader = ({ title, subtitle, align = 'center' }: { title: string, s
         <div className={`h-1 w-24 bg-cosmic-teal mb-6 ${align === 'center' ? 'mx-auto' : align === 'right' ? 'ml-auto' : ''}`} />
       )}
       {subtitle && (
-        <p className="font-paragraph text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed mx-auto">
+        <p className="font-paragraph text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed">
           {subtitle}
         </p>
       )}
