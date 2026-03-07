@@ -87,7 +87,7 @@ export default function ServicesPage() {
               Services That Actually Bring In Customers
             </h1>
             <p className="font-paragraph text-lg md:text-xl text-foreground/80 leading-relaxed">
-              We help small businesses get noticed online and actually make money from their traffic. No complicated jargon—just real solutions that work.
+              No hype. No fluff. Just the strategies and fixes that get small businesses found online and turn traffic into revenue.
             </p>
           </motion.div>
         </div>

@@ -28,8 +28,8 @@ export default function InsightDetailPage() {
       const data = await BaseCrudService.getById<Insights>('insights', id!);
       setInsight(data);
       setIsLoading(false);
-    } catch {
-      // Silently handle errors
+    } catch (error) {
+      console.error('Error loading insight:', error);
       setIsLoading(false);
     }
   };
@@ -38,8 +38,8 @@ export default function InsightDetailPage() {
     try {
       const result = await BaseCrudService.getAll<Insights>('insights', [], { limit: 3 });
       setRelatedInsights(result.items.filter(item => item._id !== id));
-    } catch {
-      // Silently handle errors
+    } catch (error) {
+      console.error('Error loading related insights:', error);
     }
   };
 

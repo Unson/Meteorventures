@@ -120,9 +120,9 @@ const WixImage = forwardRef<HTMLImageElement, WixImageProps>(
       imgProps.src = scale(data.id, data.width, data.height, targetWidth, targetHeight, transformOptions)
     } else {
       // Use a small thumbnail as placeholder until we have the actual size
-      const placeholder = getPlaceholder(fittingType ?? 'fit', data, { htmlTag: 'img' })
+      const { uri, ...placeholder } = getPlaceholder(fittingType ?? 'fit', data, { htmlTag: 'img' })
       imgProps.style = placeholder.css.img as React.CSSProperties
-      imgProps.src = `${STATIC_MEDIA_URL}${placeholder.uri}`
+      imgProps.src = `${STATIC_MEDIA_URL}${uri}`
       imgProps['data-placeholder-image'] = true
     }
 
