@@ -23,7 +23,13 @@ export default {
                 paragraph: "helvetica-w01-roman"
             },
             colors: {
-                'accent-c-t-a': '#00d9ff',
+                'accent-c-t-a': '#00ff9f',
+                'cosmic-teal': '#00ff9f',
+                'cosmic-lime': '#39ff14',
+                'cosmic-magenta': '#ff00ff',
+                'cosmic-purple': '#c300ff',
+                'cosmic-pink': '#ff69b4',
+                'cosmic-yellow-green': '#ccff00',
                 'nebula-purple': '#9d4edd',
                 'nebula-pink': '#ff006e',
                 'nebula-cyan': '#00d9ff',
@@ -34,12 +40,12 @@ export default {
                 'nebula-accent-orange': '#ff9500',
                 destructive: '#ff0000',
                 'destructive-foreground': '#ffffff',
-                background: '#0a0e27',
-                secondary: '#1a1f3a',
+                background: '#000000',
+                secondary: '#0a0015',
                 foreground: '#e0e7ff',
                 'secondary-foreground': '#e0e7ff',
                 'primary-foreground': '#e0e7ff',
-                primary: '#16213e'
+                primary: '#0a0015'
             },
         },
     },
