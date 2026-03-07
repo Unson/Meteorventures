@@ -92,7 +92,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/meteor-ventures"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-secondary/40 border border-foreground/10 rounded-lg flex items-center justify-center text-foreground hover:text-cosmic-teal hover:border-cosmic-teal/50 transition-colors"
@@ -101,7 +101,7 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/meteorventures"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-secondary/40 border border-foreground/10 rounded-lg flex items-center justify-center text-foreground hover:text-cosmic-teal hover:border-cosmic-teal/50 transition-colors"
