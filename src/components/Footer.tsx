@@ -71,11 +71,11 @@ export default function Footer() {
             <h3 className="font-heading text-xl text-foreground mb-6">Get In Touch</h3>
             <div className="flex flex-col gap-4">
               <a
-                href="tel:+12155551234"
+                href="tel:+12159482839"
                 className="flex items-start gap-3 text-foreground/80 hover:text-accent-c-t-a transition-colors group"
               >
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="font-paragraph text-base">(215) 555-1234</span>
+                <span className="font-paragraph text-base">(215)-948-2839</span>
               </a>
               <a
                 href="mailto:shane@meteorventures.com"

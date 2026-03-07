@@ -66,11 +66,11 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+12155551234"
+              href="tel:+12159482839"
               className="flex items-center gap-2 text-foreground hover:text-accent-c-t-a transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span className="font-paragraph text-base">(215) 555-1234</span>
+              <span className="font-paragraph text-base">(215)-948-2839</span>
             </a>
             <Link
               to="/free-audit"
@@ -115,11 +115,11 @@ export default function Header() {
                 </Link>
               ))}
               <a
-                href="tel:+12155551234"
+                href="tel:+12159482839"
                 className="flex items-center gap-2 text-foreground hover:text-accent-c-t-a transition-colors py-2"
               >
                 <Phone className="w-5 h-5" />
-                <span className="font-paragraph text-lg">(215) 555-1234</span>
+                <span className="font-paragraph text-lg">(215)-948-2839</span>
               </a>
               <Link
                 to="/free-audit"
