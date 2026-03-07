@@ -10,6 +10,7 @@ import InsightDetailPage from './pages/InsightDetailPage';
 import FreeAuditPage from './pages/FreeAuditPage';
 import ContactPage from './pages/ContactPage';
 import PartnersPage from './pages/PartnersPage';
+import TransmissionsPage from './pages/TransmissionsPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -46,6 +47,13 @@ const router = createBrowserRouter([
         element: <ServicesPage />,
         routeMetadata: {
           pageIdentifier: 'services',
+        },
+      },
+      {
+        path: "transmissions",
+        element: <TransmissionsPage />,
+        routeMetadata: {
+          pageIdentifier: 'transmissions',
         },
       },
       {

@@ -6,11 +6,9 @@ export default function Footer() {
 
   const quickLinks = [
     { path: '/', label: 'Home' },
-    { path: '/about', label: 'About Us' },
     { path: '/services', label: 'Services' },
-    { path: '/insights', label: 'Insights' },
-    { path: '/partners', label: 'Partners' },
-    { path: '/free-audit', label: 'Free Audit' },
+    { path: '/about', label: 'About' },
+    { path: '/transmissions', label: 'Transmissions' },
     { path: '/contact', label: 'Contact' }
   ];
 
@@ -135,11 +133,9 @@ export default function Footer() {
               <span className="text-foreground/30">•</span>
               <a href="/about" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">About</a>
               <span className="text-foreground/30">•</span>
-              <a href="/insights" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Insights</a>
+              <a href="/transmissions" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Transmissions</a>
               <span className="text-foreground/30">•</span>
-              <a href="/partners" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Partners</a>
-              <span className="text-foreground/30">•</span>
-              <a href="/free-audit" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Book Consultation</a>
+              <a href="/contact" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Contact</a>
             </nav>
           </div>
         </div>
