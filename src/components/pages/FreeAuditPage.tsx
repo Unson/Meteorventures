@@ -54,7 +54,7 @@ export default function FreeAuditPage() {
       <section className="relative w-full pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-background to-background" />
         
-        <div className="relative z-10 max-w-[100rem] mx-auto px-6 md:px-12">
+        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export default function FreeAuditPage() {
 
       {/* Main Content */}
       <section className="w-full bg-background py-20">
-        <div className="max-w-[100rem] mx-auto px-6 md:px-12">
+        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Form */}
             <motion.div
