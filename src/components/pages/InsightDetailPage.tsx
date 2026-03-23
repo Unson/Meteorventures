@@ -48,7 +48,7 @@ export default function InsightDetailPage() {
       <Header />
       
       <div className="pt-32 pb-20">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+        <div className="max-w-[100rem] mx-auto px-6 md:px-12">
           <Link
             to="/insights"
             className="inline-flex items-center gap-2 font-paragraph text-base text-foreground/80 hover:text-accent-c-t-a transition-colors mb-8"
@@ -210,7 +210,7 @@ export default function InsightDetailPage() {
 
       {/* CTA Section */}
       <section className="w-full bg-gradient-to-b from-primary to-secondary py-20">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12 text-center">
+        <div className="max-w-[100rem] mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

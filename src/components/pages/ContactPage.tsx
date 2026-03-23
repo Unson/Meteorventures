@@ -42,8 +42,8 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      content: '(215)-948-2839',
-      link: 'tel:+12159482839',
+      content: '(215) 555-1234',
+      link: 'tel:+12155551234',
       description: 'Mon-Fri, 9am-6pm EST'
     },
     {
@@ -69,7 +69,7 @@ export default function ContactPage() {
       <section className="relative w-full pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-background to-background" />
         
-        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
+        <div className="relative z-10 max-w-[100rem] mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export default function ContactPage() {
 
       {/* Contact Info Cards */}
       <section className="w-full bg-secondary/30 py-20">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+        <div className="max-w-[100rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {contactInfo.map((info, index) => (
               <motion.div
@@ -119,7 +119,7 @@ export default function ContactPage() {
 
       {/* Contact Form & Info */}
       <section className="w-full bg-background py-20">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+        <div className="max-w-[100rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Form */}
             <motion.div
@@ -193,7 +193,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="bg-background border-foreground/20 text-foreground"
-                        placeholder="(215)-948-2839"
+                        placeholder="(215) 555-1234"
                       />
                     </div>
 

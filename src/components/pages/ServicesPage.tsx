@@ -74,7 +74,7 @@ export default function ServicesPage() {
       
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-nebula-purple/20 via-background to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-background to-background" />
         
         <div className="relative z-10 max-w-[100rem] mx-auto px-6 md:px-12">
           <motion.div
@@ -109,12 +109,8 @@ export default function ServicesPage() {
                 }`}
               >
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className={`bg-secondary/40 border rounded-lg p-8 transition-colors ${
-                    index % 2 === 0 ? 'border-nebula-cyan/20 hover:border-nebula-cyan/50' : 'border-nebula-magenta/20 hover:border-nebula-magenta/50'
-                  }`}>
-                    <service.icon className={`w-16 h-16 mb-6 ${
-                      index % 2 === 0 ? 'text-nebula-cyan' : 'text-nebula-magenta'
-                    }`} />
+                  <div className="bg-secondary/40 border border-foreground/10 rounded-lg p-8 hover:border-accent-c-t-a/50 transition-colors">
+                    <service.icon className="w-16 h-16 text-accent-c-t-a mb-6" />
                     <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-4">
                       {service.title}
                     </h2>
@@ -129,9 +125,7 @@ export default function ServicesPage() {
                   <ul className="space-y-4">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <ArrowRight className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
-                          index % 2 === 0 ? 'text-nebula-cyan' : 'text-nebula-magenta'
-                        }`} />
+                        <ArrowRight className="w-5 h-5 text-accent-c-t-a flex-shrink-0 mt-0.5" />
                         <span className="font-paragraph text-base text-foreground/80">
                           {feature}
                         </span>
@@ -146,7 +140,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="w-full bg-nebula-violet/5 py-20 border-y border-nebula-cyan/10">
+      <section className="w-full bg-secondary/30 py-20">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -168,20 +162,17 @@ export default function ServicesPage() {
               {
                 step: '01',
                 title: 'Free Audit',
-                description: 'We analyze your site, identify what\'s holding you back, and show you exactly what needs to be fixed.',
-                color: 'nebula-cyan'
+                description: 'We analyze your site, identify what\'s holding you back, and show you exactly what needs to be fixed.'
               },
               {
                 step: '02',
                 title: 'Strategy Call',
-                description: 'We walk through the audit, answer your questions, and build a plan that fits your business and budget.',
-                color: 'nebula-magenta'
+                description: 'We walk through the audit, answer your questions, and build a plan that fits your business and budget.'
               },
               {
                 step: '03',
                 title: 'Execute & Optimize',
-                description: 'We implement the fixes, launch campaigns, and continuously optimize based on real data and results.',
-                color: 'nebula-bright-blue'
+                description: 'We implement the fixes, launch campaigns, and continuously optimize based on real data and results.'
               }
             ].map((item, index) => (
               <motion.div
@@ -190,17 +181,9 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`bg-primary/40 border rounded-lg p-8 ${
-                  item.color === 'nebula-cyan' ? 'border-nebula-cyan/20 hover:border-nebula-cyan/50' :
-                  item.color === 'nebula-magenta' ? 'border-nebula-magenta/20 hover:border-nebula-magenta/50' :
-                  'border-nebula-bright-blue/20 hover:border-nebula-bright-blue/50'
-                } transition-colors`}
+                className="bg-primary/40 border border-foreground/10 rounded-lg p-8"
               >
-                <div className={`font-heading text-5xl mb-4 ${
-                  item.color === 'nebula-cyan' ? 'text-nebula-cyan' :
-                  item.color === 'nebula-magenta' ? 'text-nebula-magenta' :
-                  'text-nebula-bright-blue'
-                }`}>{item.step}</div>
+                <div className="font-heading text-5xl text-accent-c-t-a mb-4">{item.step}</div>
                 <h3 className="font-heading text-2xl text-foreground mb-4">{item.title}</h3>
                 <p className="font-paragraph text-base text-foreground/80 leading-relaxed">
                   {item.description}
@@ -212,7 +195,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full bg-gradient-to-b from-nebula-purple/10 to-nebula-violet/5 py-20">
+      <section className="w-full bg-gradient-to-b from-primary to-secondary py-20">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -228,7 +211,7 @@ export default function ServicesPage() {
             </p>
             <Link
               to="/free-audit"
-              className="inline-block bg-nebula-cyan text-background font-heading font-bold text-lg px-10 py-5 rounded-lg hover:bg-nebula-magenta transition-colors"
+              className="inline-block bg-accent-c-t-a text-background font-heading font-bold text-lg px-10 py-5 rounded-lg hover:opacity-90 transition-opacity"
             >
               Get Your Free Audit
             </Link>

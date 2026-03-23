@@ -54,7 +54,7 @@ export default function FreeAuditPage() {
       <section className="relative w-full pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-background to-background" />
         
-        <div className="relative z-10 max-w-[120rem] mx-auto px-6 md:px-12">
+        <div className="relative z-10 max-w-[100rem] mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export default function FreeAuditPage() {
 
       {/* Main Content */}
       <section className="w-full bg-background py-20">
-        <div className="max-w-[120rem] mx-auto px-6 md:px-12">
+        <div className="max-w-[100rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Form */}
             <motion.div
@@ -148,7 +148,7 @@ export default function FreeAuditPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="bg-background border-foreground/20 text-foreground"
-                        placeholder="(215)-948-2839"
+                        placeholder="(215) 555-1234"
                       />
                     </div>
 
@@ -231,11 +231,11 @@ export default function FreeAuditPage() {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="tel:+12159482839"
+                    href="tel:+12155551234"
                     className="flex items-center gap-3 text-foreground hover:text-accent-c-t-a transition-colors"
                   >
                     <PhoneIcon className="w-5 h-5" />
-                    <span className="font-paragraph text-base">(215)-948-2839</span>
+                    <span className="font-paragraph text-base">(215) 555-1234</span>
                   </a>
                   <a
                     href="mailto:shane@meteorventures.com"
