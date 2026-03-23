@@ -33,7 +33,6 @@ export default function TransmissionsPage() {
       setNextSkip(result.nextSkip);
       setIsLoading(false);
     } catch (error) {
-      console.error('Error loading insights:', error);
       setIsLoading(false);
     }
   };
