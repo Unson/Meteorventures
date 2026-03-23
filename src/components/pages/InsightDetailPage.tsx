@@ -29,6 +29,7 @@ export default function InsightDetailPage() {
       setInsight(data);
       setIsLoading(false);
     } catch (error) {
+      console.error('Error loading insight:', error);
       setIsLoading(false);
     }
   };
@@ -38,7 +39,7 @@ export default function InsightDetailPage() {
       const result = await BaseCrudService.getAll<Insights>('insights', [], { limit: 3 });
       setRelatedInsights(result.items.filter(item => item._id !== id));
     } catch (error) {
-      // Error loading related insights - continue gracefully
+      console.error('Error loading related insights:', error);
     }
   };
 

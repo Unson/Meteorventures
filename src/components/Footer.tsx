@@ -6,9 +6,11 @@ export default function Footer() {
 
   const quickLinks = [
     { path: '/', label: 'Home' },
+    { path: '/about', label: 'About Us' },
     { path: '/services', label: 'Services' },
-    { path: '/about', label: 'About' },
-    { path: '/transmissions', label: 'Transmissions' },
+    { path: '/insights', label: 'Insights' },
+    { path: '/partners', label: 'Partners' },
+    { path: '/free-audit', label: 'Free Audit' },
     { path: '/contact', label: 'Contact' }
   ];
 
@@ -92,7 +94,7 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="https://www.linkedin.com/company/meteor-ventures"
+                href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-secondary/40 border border-foreground/10 rounded-lg flex items-center justify-center text-foreground hover:text-cosmic-teal hover:border-cosmic-teal/50 transition-colors"
@@ -101,7 +103,7 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://www.facebook.com/meteorventures"
+                href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-secondary/40 border border-foreground/10 rounded-lg flex items-center justify-center text-foreground hover:text-cosmic-teal hover:border-cosmic-teal/50 transition-colors"
@@ -115,28 +117,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-foreground/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="font-paragraph text-sm text-foreground/60 text-center md:text-left">
               © {currentYear} Meteor Ventures LLC. All rights reserved.
             </p>
             <p className="font-paragraph text-sm text-foreground/60 text-center md:text-right">
               Navigating the unseen forces of search algorithms since 2024.
             </p>
-          </div>
-
-          {/* Simple Footer Links Section */}
-          <div className="pt-8 border-t border-foreground/10">
-            <nav className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <a href="/" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Home</a>
-              <span className="text-foreground/30">•</span>
-              <a href="/services" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Services</a>
-              <span className="text-foreground/30">•</span>
-              <a href="/about" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">About</a>
-              <span className="text-foreground/30">•</span>
-              <a href="/transmissions" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Transmissions</a>
-              <span className="text-foreground/30">•</span>
-              <a href="/contact" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Contact</a>
-            </nav>
           </div>
         </div>
       </div>

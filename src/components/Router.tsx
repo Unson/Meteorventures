@@ -2,15 +2,14 @@ import { MemberProvider } from '@/integrations';
 import { createBrowserRouter, RouterProvider, Navigate, Outlet } from 'react-router-dom';
 import { ScrollToTop } from '@/lib/scroll-to-top';
 import ErrorPage from '@/integrations/errorHandlers/ErrorPage';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ServicesPage from './pages/ServicesPage';
-import InsightsPage from './pages/InsightsPage';
-import InsightDetailPage from './pages/InsightDetailPage';
-import FreeAuditPage from './pages/FreeAuditPage';
-import ContactPage from './pages/ContactPage';
-import PartnersPage from './pages/PartnersPage';
-import TransmissionsPage from './pages/TransmissionsPage';
+import HomePage from '@/components/pages/HomePage';
+import AboutPage from '@/components/pages/AboutPage';
+import ServicesPage from '@/components/pages/ServicesPage';
+import InsightsPage from '@/components/pages/InsightsPage';
+import InsightDetailPage from '@/components/pages/InsightDetailPage';
+import FreeAuditPage from '@/components/pages/FreeAuditPage';
+import ContactPage from '@/components/pages/ContactPage';
+import PartnersPage from '@/components/pages/PartnersPage';
 
 // Layout component that includes ScrollToTop
 function Layout() {
@@ -47,13 +46,6 @@ const router = createBrowserRouter([
         element: <ServicesPage />,
         routeMetadata: {
           pageIdentifier: 'services',
-        },
-      },
-      {
-        path: "transmissions",
-        element: <TransmissionsPage />,
-        routeMetadata: {
-          pageIdentifier: 'transmissions',
         },
       },
       {
