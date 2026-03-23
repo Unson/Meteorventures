@@ -21,7 +21,7 @@ export default function InsightsPage() {
 
   const loadInsights = async (skip = 0) => {
     try {
-      const result = await BaseCrudService.getAll<Insights>('insights', [], { limit: 9, skip });
+      const result = await BaseCrudService.getAll<Insights>('insights', {}, { limit: 9, skip });
       
       if (skip === 0) {
         setInsights(result.items);
