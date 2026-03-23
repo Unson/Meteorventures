@@ -249,18 +249,26 @@ export default function FreeAuditPage() {
 
               <div className="bg-secondary/40 border border-foreground/10 rounded-lg p-8">
                 <h3 className="font-heading text-xl text-foreground mb-4">
-                  Book a Strategy Call
+                  Schedule a Call
                 </h3>
-                <p className="font-paragraph text-sm text-foreground/80 mb-4">
-                  Use our Calendly to schedule a time that works for you.
+                <p className="font-paragraph text-sm text-foreground/80 mb-6">
+                  Ready to discuss your business? Call us directly or send an email to get started.
                 </p>
-                <div className="aspect-video bg-background/50 border border-foreground/10 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MessageSquare className="w-12 h-12 text-accent-c-t-a mx-auto mb-3" />
-                    <p className="font-paragraph text-sm text-foreground/60">
-                      Calendly embed would go here
-                    </p>
-                  </div>
+                <div className="space-y-4">
+                  <a
+                    href="tel:+12159482839"
+                    className="flex items-center gap-3 text-foreground hover:text-accent-c-t-a transition-colors"
+                  >
+                    <PhoneIcon className="w-5 h-5" />
+                    <span className="font-paragraph text-base">(215)-948-2839</span>
+                  </a>
+                  <a
+                    href="mailto:shane@meteorventures.com"
+                    className="flex items-center gap-3 text-foreground hover:text-accent-c-t-a transition-colors"
+                  >
+                    <Mail className="w-5 h-5" />
+                    <span className="font-paragraph text-base">shane@meteorventures.com</span>
+                  </a>
                 </div>
               </div>
             </motion.div>
