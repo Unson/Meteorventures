@@ -50,7 +50,7 @@ export default function InsightsPage() {
       
       {/* Hero Section */}
       <section className="relative w-full pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-background to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-nebula-purple/20 via-background to-background" />
         
         <div className="relative z-10 max-w-[100rem] mx-auto px-6 md:px-12">
           <motion.div
@@ -82,7 +82,9 @@ export default function InsightsPage() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: index * 0.05 }}
-                      className="bg-secondary/40 border border-foreground/10 rounded-lg overflow-hidden hover:border-accent-c-t-a/50 transition-colors group"
+                      className={`bg-secondary/40 border rounded-lg overflow-hidden transition-colors group ${
+                        index % 2 === 0 ? 'border-nebula-cyan/20 hover:border-nebula-cyan/50' : 'border-nebula-magenta/20 hover:border-nebula-magenta/50'
+                      }`}
                     >
                       {insight.mainImage && (
                         <Link to={`/insights/${insight._id}`} className="block">
@@ -116,7 +118,9 @@ export default function InsightsPage() {
                         </div>
 
                         <Link to={`/insights/${insight._id}`}>
-                          <h2 className="font-heading text-2xl text-foreground mb-3 group-hover:text-accent-c-t-a transition-colors">
+                          <h2 className={`font-heading text-2xl text-foreground mb-3 transition-colors ${
+                            index % 2 === 0 ? 'group-hover:text-nebula-cyan' : 'group-hover:text-nebula-magenta'
+                          }`}>
                             {insight.title}
                           </h2>
                         </Link>
@@ -129,7 +133,9 @@ export default function InsightsPage() {
 
                         <Link
                           to={`/insights/${insight._id}`}
-                          className="inline-flex items-center gap-2 font-paragraph text-base text-accent-c-t-a hover:gap-3 transition-all"
+                          className={`inline-flex items-center gap-2 font-paragraph text-base hover:gap-3 transition-all ${
+                            index % 2 === 0 ? 'text-nebula-cyan' : 'text-nebula-magenta'
+                          }`}
                         >
                           Read More
                           <ArrowRight className="w-4 h-4" />
@@ -148,7 +154,7 @@ export default function InsightsPage() {
                   >
                     <button
                       onClick={handleLoadMore}
-                      className="bg-accent-c-t-a text-background font-heading font-bold text-base px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
+                      className="bg-nebula-cyan text-background font-heading font-bold text-base px-8 py-4 rounded-lg hover:bg-nebula-magenta transition-colors"
                     >
                       Load More Insights
                     </button>
@@ -167,7 +173,7 @@ export default function InsightsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full bg-gradient-to-b from-primary to-secondary py-20">
+      <section className="w-full bg-gradient-to-b from-nebula-purple/10 to-nebula-violet/5 py-20">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -183,7 +189,7 @@ export default function InsightsPage() {
             </p>
             <Link
               to="/free-audit"
-              className="inline-block bg-accent-c-t-a text-background font-heading font-bold text-lg px-10 py-5 rounded-lg hover:opacity-90 transition-opacity"
+              className="inline-block bg-nebula-cyan text-background font-heading font-bold text-lg px-10 py-5 rounded-lg hover:bg-nebula-magenta transition-colors"
             >
               Get Your Free Audit
             </Link>
