@@ -7,11 +7,6 @@ import Footer from '@/components/Footer';
 export default function AboutPage() {
   const values = [
     {
-      icon: Shield,
-      title: 'Veteran Discipline',
-      description: 'We bring military precision and mission-focused execution to every campaign. No shortcuts, no excuses.'
-    },
-    {
       icon: Target,
       title: 'Results-Driven',
       description: 'We measure success by one metric: does it bring in customers? Everything else is noise.'
@@ -24,7 +19,12 @@ export default function AboutPage() {
     {
       icon: TrendingUp,
       title: 'Continuous Improvement',
-      description: 'Search algorithms change constantly. We stay ahead so your business doesn\'t fall behind.'
+      description: "Search algorithms change constantly. We stay ahead so your business doesn't fall behind."
+    },
+    {
+      icon: Shield,
+      title: 'Transparent & Accountable',
+      description: 'No fluff, no excuses. We show you exactly what we\'re doing and why it matters for your bottom line.'
     }
   ];
 
@@ -44,10 +44,10 @@ export default function AboutPage() {
             className="max-w-4xl"
           >
             <h1 className="font-heading text-5xl md:text-7xl text-foreground mb-6">
-              Built by a Veteran Who Got Tired of Watching Good Businesses Stay Invisible
+              Built to Fix What's Broken
             </h1>
             <p className="font-paragraph text-lg md:text-xl text-foreground/80 leading-relaxed">
-              Meteor Ventures was founded by Shane, a veteran who transitioned from military service to digital marketing and saw a problem: too many solid local businesses were getting crushed online because they didn't understand SEO, wasted money on bad ads, or had websites that barely worked.
+              I started Meteor Ventures because I kept seeing the same problem: solid businesses getting buried online. Bad websites, wasted ad spend, and zero visibility on Google. It's frustrating to watch good people struggle with something that's actually fixable.
             </p>
           </motion.div>
         </div>
@@ -89,8 +89,8 @@ export default function AboutPage() {
               <div className="flex items-center gap-4 mb-6">
                 <Shield className="w-12 h-12 text-nebula-cyan" />
                 <div>
-                  <h3 className="font-heading text-2xl text-foreground">Shane</h3>
-                  <p className="font-paragraph text-base text-foreground/70">Founder & Lead Strategist</p>
+                  <h3 className="font-heading text-2xl text-foreground">Shane McDaniels</h3>
+                  <p className="font-paragraph text-base text-foreground/70 font-light">Founder and Lead Strategist</p>
                 </div>
               </div>
               <div className="space-y-3 font-paragraph text-base text-foreground/80">

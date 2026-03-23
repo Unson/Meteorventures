@@ -13,21 +13,21 @@ const SERVICES_DATA = [
   {
     id: 'seo',
     icon: Target,
-    title: 'Local SEO & Small Business SEO Strategy',
-    description: 'Our small business SEO strategies help you dominate local search results. Get found by customers actively searching for what you offer in Philadelphia and beyond.',
-    detail: 'We reverse-engineer Google to place your business directly in the path of intent-driven local searches.'
+    title: 'SEO Strategy',
+    description: 'Get found by customers actively searching for what you offer. Real optimization that moves the needle.',
+    detail: 'We reverse-engineer the search landscape to place your business directly in the path of intent.'
   },
   {
     id: 'tech',
     icon: Zap,
-    title: 'Technical SEO for Small Businesses',
-    description: 'Slow sites lose customers. We fix technical SEO issues that kill conversions and tank your rankings.',
-    detail: 'Core Web Vitals optimization and code-level remediation to improve Google rankings for small businesses.'
+    title: 'Technical Fixes',
+    description: 'Slow sites lose customers. We fix performance issues that kill conversions and tank your rankings.',
+    detail: 'Core Web Vitals optimization and code-level remediation to ensure instant load times.'
   },
   {
     id: 'ads',
     icon: TrendingUp,
-    title: 'Small Business Digital Marketing',
+    title: 'Targeted Ads',
     description: "Stop wasting money on ads that don't convert. We run campaigns that actually bring in customers.",
     detail: 'Precision targeting on Google and Social platforms with ROI-focused attribution models.'
   },
@@ -49,22 +49,22 @@ const TRUST_STATS = [
 
 const INSIGHTS_DATA = [
   {
-    title: 'Why Most Local SEO Fails for Small Businesses in 2026',
-    excerpt: 'Small business owners often struggle with local SEO because they lack the technical expertise. Learn what actually works for local visibility and how to improve Google rankings.',
+    title: 'Why Most Local SEO Fails in 2026',
+    excerpt: 'The landscape has shifted. Old tactics are now penalties. Here is what actually works for local visibility.',
     date: 'Oct 12, 2025',
     category: 'Strategy',
     image: 'https://static.wixstatic.com/media/ca33ee_2290f93bdd31454887e112a54f6d030e~mv2.png?originWidth=1280&originHeight=704'
   },
   {
     title: 'Case Study: Doubling Leads via Speed',
-    excerpt: "How we fixed a Philadelphia business's site speed and saw a 200% increase in qualified form submissions through technical SEO optimization.",
+    excerpt: "How we fixed a Philly business's site speed and saw a 200% increase in qualified form submissions.",
     date: 'Sep 28, 2025',
     category: 'Performance',
     image: 'https://static.wixstatic.com/media/ca33ee_a1b2c3d4e5f6g7h8i9j0~mv2.png?originWidth=1280&originHeight=704'
   },
   {
-    title: 'Google Updates That Matter for Small Business SEO',
-    excerpt: 'These algorithm changes directly impact small business rankings. Understand what matters and how to adapt your SEO strategy for 2026.',
+    title: 'Google Updates That Matter Right Now',
+    excerpt: 'Ignore the noise. These are the three algorithm changes that actually impact small business rankings.',
     date: 'Sep 15, 2025',
     category: 'Intelligence',
     image: 'https://static.wixstatic.com/media/ca33ee_k1l2m3n4o5p6q7r8s9t0~mv2.png?originWidth=1280&originHeight=704'
@@ -247,15 +247,15 @@ export default function HomePage() {
                 </div>
                 
                 <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-foreground mb-8 leading-[0.9] tracking-tighter">
-                  Local SEO for <br />
+                  Your market's <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-cosmic-teal via-cosmic-magenta to-cosmic-pink">
-                    small businesses.
+                    out there.
                   </span> <br />
-                  <span className="text-cosmic-teal">We'll get you found.</span>
+                  <span className="text-cosmic-teal">We'll find it.</span>
                 </h1>
 
                 <p className="font-paragraph text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl leading-relaxed border-l-2 border-cosmic-teal/50 pl-6">
-                  Small businesses are drifting in the void—invisible on Google, burning cash on ads, and losing leads to slow sites. We specialize in Local SEO for small businesses in Philadelphia to help you dominate local search results and attract more nearby customers.
+                  Small businesses are drifting in the void—invisible on Google, burning cash on ads, and losing leads to slow sites. We provide the gravity you need through proven local SEO strategies and technical optimization.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
@@ -288,22 +288,21 @@ export default function HomePage() {
         
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative flex justify-center lg:justify-start">
+            <div className="relative flex justify-center lg:justify-end pr-0 lg:pr-12">
               {/* Enhanced dramatic glow effect */}
               <div className="absolute -inset-12 bg-gradient-to-r from-cosmic-teal/40 via-cosmic-magenta/30 to-cosmic-teal/40 blur-3xl rounded-full animate-pulse" />
               <div className="absolute -inset-16 bg-gradient-to-r from-cosmic-magenta/20 via-cosmic-purple/15 to-cosmic-magenta/20 blur-2xl rounded-full opacity-60 animate-pulse" style={{ animationDelay: '0.5s' }} />
               
               <div className="relative aspect-[4/5] w-4/5 md:w-2/3 overflow-hidden rounded-lg border-2 border-cosmic-teal/60 shadow-2xl shadow-cosmic-teal/50">
                  <Image 
-                  src="https://static.wixstatic.com/media/ca33ee_1d9aab7a71bf4125b0191d81a37a9541~mv2.png?originWidth=384&originHeight=448" 
+                  src="https://static.wixstatic.com/media/ca33ee_a75866ae73f34e95a8f1a185c75bed6d~mv2.jpg" 
                   alt="Abstract representation of digital void" 
                   className="w-full h-full object-cover opacity-100 hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-b from-cosmic-magenta/10 via-transparent to-cosmic-teal/10 rounded-sm" />
                 <div className="absolute bottom-8 left-8 right-8">
-                  <h3 className="font-heading text-4xl text-foreground mb-3 relative z-10 font-bold rounded-[50px]">The Invisible Void</h3>
-                  <p className="font-paragraph text-lg text-foreground/90 relative z-10 font-semibold">Where good businesses go to disappear.</p>
+                  <p className="font-paragraph text-2xl md:text-3xl text-foreground/90 relative z-10 font-semibold">No matter where your business is, we want customers to find you.</p>
                 </div>
               </div>
             </div>
@@ -311,15 +310,15 @@ export default function HomePage() {
             <div>
               <SectionHeader 
                 title="Silence is Expensive." 
-                subtitle="Most small business websites aren't assets. They are liabilities floating in deep space, losing you customers to competitors with better Local SEO."
+                subtitle="Most small business websites aren't assets. They are liabilities floating in deep space."
                 align="left"
               />
               
               <div className="space-y-12">
                 {[
-                  { title: "Invisible Signals", desc: "You have the best product, but Google doesn't know you exist. Your competitors are winning simply because they have better Local SEO and dominate local search results." },
-                  { title: "Resource Drain", desc: "Pouring budget into ads that land on slow, confusing pages. Without proper small business SEO, you're wasting money on traffic that never converts." },
-                  { title: "Lost Transmissions", desc: "Potential customers search for your services locally but can't find you. They visit competitors instead. You never even knew they were looking." }
+                  { title: "Invisible Signals", desc: "You have the best product, but Google doesn't know you exist. Your competitors are winning simply because they are louder. Without proper on-page SEO and local SEO optimization, your business remains hidden from customers actively searching for your services." },
+                  { title: "Resource Drain", desc: "Pouring budget into ads that land on slow, confusing pages. It's like fueling a rocket with a hull breach. Technical SEO issues and poor site performance drain your marketing budget while off-page SEO efforts go to waste." },
+                  { title: "Lost Transmissions", desc: "Potential customers visit, wait 3 seconds for a load, and leave. You never even knew they were there. Technical SEO problems and slow load times are costing you leads every single day." }
                 ].map((item, idx) => (
                   <motion.div 
                     key={idx}
@@ -349,8 +348,8 @@ export default function HomePage() {
         
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <SectionHeader 
-            title="Local SEO & SEO for Small Businesses" 
-            subtitle="We don't guess. We execute calculated maneuvers to dominate your local market with precision navigation and proven small business digital marketing strategies."
+            title="Precision Navigation" 
+            subtitle="We don't guess. We deploy precise, data-driven strategies to win your local market."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -422,10 +421,10 @@ export default function HomePage() {
               
               <div className="space-y-6 font-paragraph text-lg text-foreground/80 leading-relaxed max-w-3xl">
                 <p>
-                  Meteor Ventures started from a moment of pure frustration. I was just trying to buy a specific set of bass strings and ended up hopping through endless websites that were slow, confusing, and hard to use. It shouldn't take 20 minutes to buy something simple. That experience flipped a switch—if I was struggling this much, how many other customers were too? And how many small businesses were losing sales because their websites were getting in the way?
+                  Meteor Ventures started from a moment of pure frustration. I was just trying to buy a specific set of bass strings and ended up hopping through endless websites that were slow, confusing, and hard to use. It shouldn't take 20 minutes to buy something simple. That experience flipped a switch—if I was struggling this much, how many other customers were too? And how many businesses were losing sales because their websites were getting in the way?
                 </p>
                 <p>
-                  Instead of complaining, I got to work. I taught myself how websites function, how search engines decide what gets seen, and what actually keeps people engaged. That curiosity turned into a mission to help small businesses improve their Google rankings and dominate local search. Today, I help businesses uncover what's holding their websites back and fix it—through better Local SEO, clearer content, and smoother user experiences. Because great products, great service, and great people deserve to be found by customers searching for them locally.
+                  Instead of complaining, I got to work. I taught myself how websites function, how search engines decide what gets seen, and what actually keeps people engaged. That curiosity turned into a mission, and that mission became Meteor Ventures LLC. Today, I help businesses uncover what's holding their websites back and fix it—through better SEO, clearer content, and smoother user experiences. Because great products, great service, and great people deserve to be found.
                 </p>
               </div>
 
@@ -450,7 +449,7 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
               <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-4">Signals from the Void</h2>
-              <p className="font-paragraph text-foreground/60 max-w-xl">Tactical intelligence for small business SEO and Local SEO strategies to improve Google rankings.</p>
+              <p className="font-paragraph text-foreground/60 max-w-xl">Tactical intelligence for navigating the digital landscape.</p>
             </div>
             <Link to="/insights" className="px-6 py-3 border border-cosmic-teal/20 hover:bg-cosmic-teal/5 text-foreground font-heading text-sm tracking-wider uppercase transition-colors">
               View All Transmissions
@@ -515,10 +514,10 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-8">
-              Ready to Launch Your Local SEO?
+              Ready to Launch?
             </h2>
             <p className="font-paragraph text-xl text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-              The market is vast, but your trajectory doesn't have to be uncertain. Start with a free audit. We'll show you exactly where the opportunities are hiding and how to improve your Google rankings for local searches.
+              The market is vast, but your trajectory doesn't have to be uncertain. Start with a free audit. We'll show you exactly where the opportunities are hiding.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
