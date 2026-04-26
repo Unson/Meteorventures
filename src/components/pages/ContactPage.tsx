@@ -42,8 +42,8 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      content: '(215)-948-2839',
-      link: 'tel:+12159482839',
+      content: '(215) 555-1234',
+      link: 'tel:+12155551234',
       description: 'Mon-Fri, 9am-6pm EST'
     },
     {
@@ -193,7 +193,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="bg-background border-foreground/20 text-foreground"
-                        placeholder="(215)-948-2839"
+                        placeholder="(215) 555-1234"
                       />
                     </div>
 
