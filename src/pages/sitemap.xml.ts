@@ -1,11 +1,11 @@
-import { BaseCrudService } from '@/integrations';
 import type { Insights } from '@/entities';
+import { BaseCrudService } from '@/integrations';
 
 export const prerender = true;
 
 export async function GET() {
-  const baseUrl = 'https://flow.meteorventuresllc.com';
-  
+  const baseUrl = 'https://';
+
   // Fetch all insights for dynamic URLs
   let insightUrls = '';
   try {
@@ -13,7 +13,7 @@ export async function GET() {
     if (result.items && result.items.length > 0) {
       insightUrls = result.items
         .map(insight => {
-          const lastmod = insight._updatedDate 
+          const lastmod = insight._updatedDate
             ? new Date(insight._updatedDate).toISOString().split('T')[0]
             : new Date().toISOString().split('T')[0];
           return `  <url>
