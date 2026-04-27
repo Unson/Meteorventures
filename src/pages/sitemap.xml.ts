@@ -4,7 +4,7 @@ import { BaseCrudService } from '@/integrations';
 export const prerender = true;
 
 export async function GET() {
-  const baseUrl = 'https://';
+  const baseUrl = 'https://www.meteorventuresllc.com';
 
   // Fetch all insights for dynamic URLs
   let insightUrls = '';
