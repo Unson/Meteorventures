@@ -148,7 +148,7 @@ export default function FreeAuditPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="bg-background border-foreground/20 text-foreground"
-                        placeholder="(215) 555-1234"
+                        placeholder="(215)-948-2839"
                       />
                     </div>
 
@@ -231,11 +231,11 @@ export default function FreeAuditPage() {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="tel:+12155551234"
+                    href="tel:+12159482839"
                     className="flex items-center gap-3 text-foreground hover:text-accent-c-t-a transition-colors"
                   >
                     <PhoneIcon className="w-5 h-5" />
-                    <span className="font-paragraph text-base">(215) 555-1234</span>
+                    <span className="font-paragraph text-base">(215)-948-2839</span>
                   </a>
                   <a
                     href="mailto:shane@meteorventures.com"
