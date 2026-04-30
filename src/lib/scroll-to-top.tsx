@@ -1,27 +1,22 @@
 import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
 
 // Component to handle automatic scroll management
 export function ScrollToTop() {
-  const location = useLocation();
-  const prevLocationRef = useRef<string | null>(null);
+  const prevPathRef = useRef<string | null>(null);
 
   useEffect(() => {
-    // Check if this is the same page (same pathname)
-    const isSamePage = prevLocationRef.current === location.pathname;
+    const pathname = window.location.pathname;
+    const hash = window.location.hash;
+    const isSamePage = prevPathRef.current === pathname;
 
-    // Check if the URL has a hash
-    if (location.hash) {
-      // URL with hash: Wait 100ms and then call scrollIntoView() to the target element
+    if (hash) {
       setTimeout(() => {
-        const element = document.getElementById(location.hash.slice(1));
+        const element = document.getElementById(hash.slice(1));
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
     } else {
-      // URL without hash: Scroll to the top of the page
-      // Use smooth animation if same page, auto if different page
       window.scrollTo({
         top: 0,
         left: 0,
@@ -29,9 +24,8 @@ export function ScrollToTop() {
       });
     }
 
-    // Update the previous location reference
-    prevLocationRef.current = location.pathname;
-  }, [location]);
+    prevPathRef.current = pathname;
+  }, []);
 
   return null;
 }
