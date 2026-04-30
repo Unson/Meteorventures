@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Shield, Award, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -184,12 +183,12 @@ export default function PartnersPage() {
             <p className="font-paragraph text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
               Let's discuss how our integrated approach can accelerate your business growth.
             </p>
-            <Link
-              to="/free-audit"
+            <a
+              href="/free-audit"
               className="inline-block bg-cosmic-teal text-background font-heading font-bold text-lg px-10 py-5 rounded-lg hover:bg-cosmic-magenta transition-colors"
             >
               Get Your Free Audit
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
