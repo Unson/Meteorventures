@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Shield, Linkedin, Facebook } from 'lucide-react';
 
 export default function Footer() {
@@ -44,13 +43,13 @@ export default function Footer() {
             <h3 className="font-heading text-xl text-foreground mb-6">Quick Links</h3>
             <nav className="flex flex-col gap-3">
               {quickLinks.map((link) => (
-                <Link
+                <a
                   key={link.path}
-                  to={link.path}
+                  href={link.path}
                   className="font-paragraph text-base text-foreground/80 hover:text-cosmic-teal transition-colors"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </nav>
           </div>
