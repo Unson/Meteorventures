@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const [pathname, setPathname] = useState('');
+
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,10 +18,6 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location]);
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -38,29 +37,29 @@ export default function Header() {
       <div className="max-w-[120rem] mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 bg-cosmic-teal rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
               <span className="font-heading text-background text-xl font-bold">M</span>
             </div>
             <span className="font-heading text-xl md:text-2xl text-foreground">
               Meteor Ventures
             </span>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.path}
-                to={link.path}
+                href={link.path}
                 className={`font-paragraph text-base transition-colors ${
-                  location.pathname === link.path
+                  pathname === link.path
                     ? 'text-cosmic-teal'
                     : 'text-foreground hover:text-cosmic-teal'
                 }`}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -73,12 +72,12 @@ export default function Header() {
               <Phone className="w-5 h-5" />
               <span className="font-paragraph text-base">(215)-948-2839</span>
             </a>
-            <Link
-              to="/free-audit"
+            <a
+              href="/free-audit"
               className="bg-cosmic-teal text-background font-heading font-bold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
             >
               Free Audit
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -103,17 +102,17 @@ export default function Header() {
           >
             <nav className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.path}
-                  to={link.path}
+                  href={link.path}
                   className={`font-paragraph text-lg py-2 transition-colors ${
-                    location.pathname === link.path
+                    pathname === link.path
                       ? 'text-cosmic-teal'
                       : 'text-foreground hover:text-cosmic-teal'
                   }`}
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
               <a
                 href="tel:+12159482839"
@@ -122,12 +121,12 @@ export default function Header() {
                 <Phone className="w-5 h-5" />
                 <span className="font-paragraph text-lg">(215)-948-2839</span>
               </a>
-              <Link
-                to="/free-audit"
+              <a
+                href="/free-audit"
                 className="bg-cosmic-teal text-background font-heading font-bold text-base px-6 py-3 rounded-lg hover:opacity-90 transition-opacity text-center mt-2"
               >
                 Get Your Free Audit
-              </Link>
+              </a>
             </nav>
           </motion.div>
         )}
