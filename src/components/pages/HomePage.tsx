@@ -1,14 +1,11 @@
 // HPI 1.7-G - Cosmic Horror Aesthetic
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Target, Zap, TrendingUp, Shield, ArrowRight, BarChart3, Search, Rocket, ChevronRight, Star } from 'lucide-react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Target, Zap, TrendingUp, Shield, ArrowRight, ChevronRight, Star } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Image } from '@/components/ui/image';
 
-// --- Canonical Data Sources ---
-// Preserving original data structures and enriching with prompt-requested content
 const SERVICES_DATA = [
   {
     id: 'seo',
@@ -71,21 +68,16 @@ const INSIGHTS_DATA = [
   }
 ];
 
-// --- Utility Components ---
-
 const StarField = () => {
-  // Static star generation to prevent hydration mismatch
-  const stars = Array.from({ length: 50 }).map((_, i) => (
-    {
-      id: i,
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      size: Math.random() * 2 + 1,
-      duration: Math.random() * 3 + 2,
-      delay: Math.random() * 2,
-      color: ['cosmic-teal', 'cosmic-magenta', 'cosmic-pink'][Math.floor(Math.random() * 3)]
-    }
-  ));
+  const stars = Array.from({ length: 50 }).map((_, i) => ({
+    id: i,
+    top: `${(i * 37 + 13) % 100}%`,
+    left: `${(i * 53 + 7) % 100}%`,
+    size: (i % 3) + 1,
+    duration: (i % 3) + 2,
+    delay: (i % 2),
+    color: ['cosmic-teal', 'cosmic-magenta', 'cosmic-pink'][i % 3]
+  }));
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -97,87 +89,48 @@ const StarField = () => {
             star.color === 'cosmic-magenta' ? 'bg-cosmic-magenta/40' :
             'bg-cosmic-pink/40'
           }`}
-          style={{
-            top: star.top,
-            left: star.left,
-            width: star.size,
-            height: star.size,
-          }}
-          animate={{
-            opacity: [0.3, 1, 0.3],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: star.duration,
-            repeat: Infinity,
-            delay: star.delay,
-            ease: "easeInOut"
-          }}
+          style={{ top: star.top, left: star.left, width: star.size, height: star.size }}
+          animate={{ opacity: [0.3, 1, 0.3], scale: [1, 1.3, 1] }}
+          transition={{ duration: star.duration, repeat: Infinity, delay: star.delay, ease: "easeInOut" }}
         />
       ))}
     </div>
   );
 };
 
-const MeteorEffect = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      <style>
-        {`
-          @keyframes meteor {
-            0% { transform: rotate(215deg) translateX(0); opacity: 1; }
-            70% { opacity: 1; }
-            100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
-          }
-          @keyframes meteor-magenta {
-            0% { transform: rotate(215deg) translateX(0); opacity: 1; }
-            70% { opacity: 1; }
-            100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
-          }
-          @keyframes meteor-pink {
-            0% { transform: rotate(215deg) translateX(0); opacity: 1; }
-            70% { opacity: 1; }
-            100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
-          }
-          .meteor-trail {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 2px;
-            width: 100px;
-            background: linear-gradient(to right, rgba(0, 255, 159, 0) 0%, rgba(0, 255, 159, 1) 100%);
-            animation: meteor 3s linear infinite;
-            opacity: 0;
-          }
-          .meteor-trail-magenta {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 2px;
-            width: 100px;
-            background: linear-gradient(to right, rgba(255, 0, 255, 0) 0%, rgba(255, 0, 255, 1) 100%);
-            animation: meteor-magenta 3s linear infinite;
-            opacity: 0;
-          }
-          .meteor-trail-pink {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 2px;
-            width: 100px;
-            background: linear-gradient(to right, rgba(255, 105, 180, 0) 0%, rgba(255, 105, 180, 1) 100%);
-            animation: meteor-pink 3s linear infinite;
-            opacity: 0;
-          }
-        `}
-      </style>
-      <div className="meteor-trail" style={{ top: '20%', left: '80%', animationDelay: '0s' }} />
-      <div className="meteor-trail-magenta" style={{ top: '40%', left: '90%', animationDelay: '2s' }} />
-      <div className="meteor-trail-pink" style={{ top: '10%', left: '60%', animationDelay: '4s' }} />
-      <div className="meteor-trail" style={{ top: '70%', left: '20%', animationDelay: '1s' }} />
-    </div>
-  );
-};
+const MeteorEffect = () => (
+  <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <style>{`
+      @keyframes meteor {
+        0% { transform: rotate(215deg) translateX(0); opacity: 1; }
+        70% { opacity: 1; }
+        100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
+      }
+      .meteor-trail {
+        position: absolute; top: 50%; left: 50%;
+        height: 2px; width: 100px;
+        background: linear-gradient(to right, rgba(0,255,159,0) 0%, rgba(0,255,159,1) 100%);
+        animation: meteor 3s linear infinite; opacity: 0;
+      }
+      .meteor-trail-magenta {
+        position: absolute; top: 50%; left: 50%;
+        height: 2px; width: 100px;
+        background: linear-gradient(to right, rgba(255,0,255,0) 0%, rgba(255,0,255,1) 100%);
+        animation: meteor 3s linear infinite; opacity: 0;
+      }
+      .meteor-trail-pink {
+        position: absolute; top: 50%; left: 50%;
+        height: 2px; width: 100px;
+        background: linear-gradient(to right, rgba(255,105,180,0) 0%, rgba(255,105,180,1) 100%);
+        animation: meteor 3s linear infinite; opacity: 0;
+      }
+    `}</style>
+    <div className="meteor-trail" style={{ top: '20%', left: '80%', animationDelay: '0s' }} />
+    <div className="meteor-trail-magenta" style={{ top: '40%', left: '90%', animationDelay: '2s' }} />
+    <div className="meteor-trail-pink" style={{ top: '10%', left: '60%', animationDelay: '4s' }} />
+    <div className="meteor-trail" style={{ top: '70%', left: '20%', animationDelay: '1s' }} />
+  </div>
+);
 
 const SectionHeader = ({ title, subtitle, align = 'center' }: { title: string, subtitle?: string, align?: 'left' | 'center' | 'right' }) => (
   <div className={`mb-16 ${align === 'center' ? 'text-center' : align === 'left' ? 'text-left' : 'text-right'}`}>
@@ -187,43 +140,26 @@ const SectionHeader = ({ title, subtitle, align = 'center' }: { title: string, s
       viewport={{ once: true }}
       transition={{ duration: 0.7, ease: "easeOut" }}
     >
-      <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 tracking-tight">
-        {title}
-      </h2>
-      {subtitle && (
-        <div className={`h-1 w-24 bg-cosmic-teal mb-6 ${align === 'center' ? 'mx-auto' : align === 'right' ? 'ml-auto' : ''}`} />
-      )}
-      {subtitle && (
-        <p className="font-paragraph text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed">
-          {subtitle}
-        </p>
-      )}
+      <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl text-foreground mb-6 tracking-tight">{title}</h2>
+      {subtitle && <div className={`h-1 w-24 bg-cosmic-teal mb-6 ${align === 'center' ? 'mx-auto' : align === 'right' ? 'ml-auto' : ''}`} />}
+      {subtitle && <p className="font-paragraph text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed">{subtitle}</p>}
     </motion.div>
   </div>
 );
 
-// --- Main Component ---
-
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
+  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
   const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
     <div ref={containerRef} className="min-h-screen bg-background text-foreground overflow-clip selection:bg-cosmic-teal/30 selection:text-white">
       <Header />
-      {/* --- HERO SECTION --- */}
+
+      {/* HERO */}
       <section className="relative w-full min-h-[100vh] flex items-center justify-center overflow-hidden">
-        {/* Dynamic Background Layers */}
-        <motion.div 
-          style={{ y: yBackground }}
-          className="absolute inset-0 z-0"
-        >
+        <motion.div style={{ y: yBackground }} className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-background" />
           <div className="absolute inset-0 bg-gradient-to-b from-cosmic-magenta/8 via-cosmic-purple/5 to-background" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(195,0,255,0.1),transparent_70%)]" />
@@ -248,9 +184,7 @@ export default function HomePage() {
                 
                 <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl text-foreground mb-8 leading-[0.9] tracking-tighter">
                   Your market's <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cosmic-teal via-cosmic-magenta to-cosmic-pink">
-                    out there.
-                  </span> <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cosmic-teal via-cosmic-magenta to-cosmic-pink">out there.</span> <br />
                   <span className="text-cosmic-teal">We'll find it.</span>
                 </h1>
 
@@ -259,29 +193,29 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-6">
-                  <Link
-                    to="/free-audit"
+                  <a
+                    href="/free-audit"
                     className="group relative inline-flex items-center justify-center px-8 py-4 bg-cosmic-teal text-background font-heading font-bold text-lg tracking-wide overflow-hidden rounded-sm transition-transform hover:scale-[1.02]"
                   >
                     <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                     <span className="relative flex items-center gap-2">
                       Get Your Free Site Audit <ArrowRight className="w-5 h-5" />
                     </span>
-                  </Link>
-                  <Link
-                    to="/services"
+                  </a>
+                  <a
+                    href="/services"
                     className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-cosmic-magenta/40 text-foreground font-heading font-bold text-lg tracking-wide hover:bg-cosmic-magenta/5 transition-colors rounded-sm"
                   >
                     Explore Capabilities
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             </div>
           </div>
         </div>
-
       </section>
-      {/* --- THE PROBLEM (The Void) --- */}
+
+      {/* THE PROBLEM */}
       <section className="relative w-full py-32 bg-gradient-to-b from-background via-cosmic-teal/5 to-background overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cosmic-teal/20 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,255,159,0.08),transparent_50%)] pointer-events-none" />
@@ -289,12 +223,10 @@ export default function HomePage() {
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative flex justify-center lg:justify-start">
-              {/* Enhanced dramatic glow effect */}
               <div className="absolute -inset-12 bg-gradient-to-r from-cosmic-teal/40 via-cosmic-magenta/30 to-cosmic-teal/40 blur-3xl rounded-full animate-pulse" />
               <div className="absolute -inset-16 bg-gradient-to-r from-cosmic-magenta/20 via-cosmic-purple/15 to-cosmic-magenta/20 blur-2xl rounded-full opacity-60 animate-pulse" style={{ animationDelay: '0.5s' }} />
-              
               <div className="relative aspect-[4/5] w-4/5 md:w-2/3 overflow-hidden rounded-lg border-2 border-cosmic-teal/60 shadow-2xl shadow-cosmic-teal/50">
-                 <Image 
+                <Image 
                   src="https://static.wixstatic.com/media/ca33ee_a75866ae73f34e95a8f1a185c75bed6d~mv2.jpg" 
                   alt="Abstract representation of digital void" 
                   className="w-full h-full object-cover opacity-100 hover:scale-110 transition-transform duration-700"
@@ -314,12 +246,11 @@ export default function HomePage() {
                 subtitle="Most small business websites aren't assets. They are liabilities floating in deep space."
                 align="left"
               />
-              
               <div className="space-y-12">
                 {[
-                  { title: "Invisible Signals", desc: "You have the best product, but Google doesn't know you exist. Your competitors are winning simply because they are louder. Without proper on-page SEO and local SEO optimization, your business remains hidden from customers actively searching for your services." },
-                  { title: "Resource Drain", desc: "Pouring budget into ads that land on slow, confusing pages. It's like fueling a rocket with a hull breach. Technical SEO issues and poor site performance drain your marketing budget while off-page SEO efforts go to waste." },
-                  { title: "Lost Transmissions", desc: "Potential customers visit, wait 3 seconds for a load, and leave. You never even knew they were there. Technical SEO problems and slow load times are costing you leads every single day." }
+                  { title: "Invisible Signals", desc: "You have the best product, but Google doesn't know you exist. Your competitors are winning simply because they are louder." },
+                  { title: "Resource Drain", desc: "Pouring budget into ads that land on slow, confusing pages. It's like fueling a rocket with a hull breach." },
+                  { title: "Lost Transmissions", desc: "Potential customers visit, wait 3 seconds for a load, and leave. You never even knew they were there." }
                 ].map((item, idx) => (
                   <motion.div 
                     key={idx}
@@ -343,16 +274,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* --- SERVICES (Precision Navigation) --- */}
+
+      {/* SERVICES */}
       <section className="relative w-full py-32 bg-gradient-to-b from-background via-cosmic-magenta/5 to-background border-y border-cosmic-teal/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(255,0,255,0.08),transparent_50%)] pointer-events-none" />
-        
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
-          <SectionHeader 
-            title="Precision Navigation" 
-            subtitle="We don't guess. We deploy precise, data-driven strategies to win your local market."
-          />
-
+          <SectionHeader title="Precision Navigation" subtitle="We don't guess. We deploy precise, data-driven strategies to win your local market." />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES_DATA.map((service, index) => (
               <motion.div
@@ -368,45 +295,33 @@ export default function HomePage() {
                 <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                   index % 2 === 0 ? 'bg-gradient-to-b from-cosmic-magenta/5 to-transparent' : 'bg-gradient-to-b from-cosmic-teal/5 to-transparent'
                 }`} />
-                
                 <service.icon className={`w-12 h-12 mb-8 group-hover:scale-110 transition-transform duration-300 ${
                   index % 2 === 0 ? 'text-cosmic-teal' : 'text-cosmic-magenta'
                 }`} />
-                
-                <h3 className="font-heading text-2xl text-foreground mb-4 group-hover:text-white transition-colors">
-                  {service.title}
-                </h3>
-                
-                <p className="font-paragraph text-foreground/70 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-                
+                <h3 className="font-heading text-2xl text-foreground mb-4 group-hover:text-white transition-colors">{service.title}</h3>
+                <p className="font-paragraph text-foreground/70 mb-6 leading-relaxed">{service.description}</p>
                 <div className={`h-px w-full mb-6 transition-colors ${
                   index % 2 === 0 ? 'bg-cosmic-teal/10 group-hover:bg-cosmic-magenta/30' : 'bg-cosmic-magenta/10 group-hover:bg-cosmic-teal/30'
                 }`} />
-                
-                <p className="font-paragraph text-sm text-foreground/50 italic">
-                  {service.detail}
-                </p>
+                <p className="font-paragraph text-sm text-foreground/50 italic">{service.detail}</p>
               </motion.div>
             ))}
           </div>
-
           <div className="mt-16 text-center">
-            <Link
-              to="/services"
+            <a
+              href="/services"
               className="inline-flex items-center gap-2 text-cosmic-teal font-heading font-bold text-lg hover:text-cosmic-magenta transition-colors border-b border-cosmic-teal/30 hover:border-cosmic-magenta pb-1"
             >
               Explore Full Mission Parameters <ChevronRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
-      {/* --- VETERAN STORY (Trust) --- */}
+
+      {/* VETERAN STORY */}
       <section className="relative w-full py-32 bg-gradient-to-b from-background via-cosmic-purple/5 to-background overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(195,0,255,0.1),transparent_50%)] pointer-events-none" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(0,255,159,0.08),transparent_50%)] pointer-events-none" />
-        
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-7">
@@ -414,21 +329,14 @@ export default function HomePage() {
                 <Star className="w-5 h-5 text-cosmic-teal fill-cosmic-teal" />
                 <span className="font-heading text-sm tracking-widest uppercase text-cosmic-teal">Veteran Owned & Operated</span>
               </div>
-              
               <h2 className="font-heading text-4xl md:text-6xl text-foreground mb-8">
                 Forged in Discipline. <br />
                 <span className="text-cosmic-magenta">Driven by Results.</span>
               </h2>
-              
               <div className="space-y-6 font-paragraph text-lg text-foreground/80 leading-relaxed max-w-3xl">
-                <p>
-                  Meteor Ventures started from a moment of pure frustration. I was just trying to buy a specific set of bass strings and ended up hopping through endless websites that were slow, confusing, and hard to use. It shouldn't take 20 minutes to buy something simple. That experience flipped a switch—if I was struggling this much, how many other customers were too? And how many businesses were losing sales because their websites were getting in the way?
-                </p>
-                <p>
-                  Instead of complaining, I got to work. I taught myself how websites function, how search engines decide what gets seen, and what actually keeps people engaged. That curiosity turned into a mission, and that mission became Meteor Ventures LLC. Today, I help businesses uncover what's holding their websites back and fix it—through better SEO, clearer content, and smoother user experiences. Because great products, great service, and great people deserve to be found.
-                </p>
+                <p>Meteor Ventures started from a moment of pure frustration. I was just trying to buy a specific set of bass strings and ended up hopping through endless websites that were slow, confusing, and hard to use. That experience flipped a switch—if I was struggling this much, how many other customers were too?</p>
+                <p>Instead of complaining, I got to work. I taught myself how websites function, how search engines decide what gets seen, and what actually keeps people engaged. That curiosity turned into a mission, and that mission became Meteor Ventures LLC.</p>
               </div>
-
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-12 border-t border-cosmic-teal/10 pt-12">
                 {TRUST_STATS.map((stat, idx) => (
                   <div key={idx}>
@@ -441,22 +349,20 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {/* --- INSIGHTS (Signals from the Void) --- */}
+
+      {/* INSIGHTS */}
       <section className="relative w-full py-32 bg-gradient-to-b from-secondary via-secondary/50 to-secondary">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(195,0,255,0.1),transparent_60%)] pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(0,255,159,0.08),transparent_50%)] pointer-events-none" />
-        
         <div className="max-w-[120rem] mx-auto px-6 md:px-12 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
               <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-4">Signals from the Void</h2>
               <p className="font-paragraph text-foreground/60 max-w-xl">Tactical intelligence for navigating the digital landscape.</p>
             </div>
-            <Link to="/insights" className="px-6 py-3 border border-cosmic-teal/20 hover:bg-cosmic-teal/5 text-foreground font-heading text-sm tracking-wider uppercase transition-colors">
+            <a href="/insights" className="px-6 py-3 border border-cosmic-teal/20 hover:bg-cosmic-teal/5 text-foreground font-heading text-sm tracking-wider uppercase transition-colors">
               View All Transmissions
-            </Link>
+            </a>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {INSIGHTS_DATA.map((post, idx) => (
               <motion.article 
@@ -471,11 +377,7 @@ export default function HomePage() {
                   <div className="absolute top-4 left-4 z-10 bg-background/80 backdrop-blur-md px-3 py-1 text-xs font-heading uppercase tracking-wider text-cosmic-teal border border-cosmic-teal/20">
                     {post.category}
                   </div>
-                  <Image 
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-                  />
+                  <Image src={post.image} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
                 </div>
                 <div className="flex items-center gap-4 mb-3 text-xs font-paragraph text-foreground/40">
@@ -483,61 +385,37 @@ export default function HomePage() {
                   <span className="w-1 h-1 rounded-full bg-cosmic-magenta" />
                   <span>By Shane</span>
                 </div>
-                <h3 className="font-heading text-xl md:text-2xl text-foreground mb-3 group-hover:text-cosmic-teal transition-colors line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="font-paragraph text-foreground/60 line-clamp-3 text-sm leading-relaxed">
-                  {post.excerpt}
-                </p>
+                <h3 className="font-heading text-xl md:text-2xl text-foreground mb-3 group-hover:text-cosmic-teal transition-colors line-clamp-2">{post.title}</h3>
+                <p className="font-paragraph text-foreground/60 line-clamp-3 text-sm leading-relaxed">{post.excerpt}</p>
               </motion.article>
             ))}
           </div>
         </div>
       </section>
-      {/* --- CTA (Initiate Sequence) --- */}
+
+      {/* CTA */}
       <section className="relative w-full py-40 overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-cosmic-teal/5 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,159,0.08),transparent_60%)] pointer-events-none" />
-        
-        {/* Animated Grid Background */}
-        <div className="absolute inset-0 opacity-20" 
-             style={{ 
-               backgroundImage: 'linear-gradient(rgba(0, 255, 159, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 159, 0.1) 1px, transparent 1px)', 
-               backgroundSize: '50px 50px' 
-             }} 
-        />
-
+        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(rgba(0,255,159,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,159,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-8">
-              Ready to Launch?
-            </h2>
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <h2 className="font-heading text-5xl md:text-7xl text-foreground mb-8">Ready to Launch?</h2>
             <p className="font-paragraph text-xl text-foreground/80 mb-12 max-w-2xl mx-auto leading-relaxed">
               The market is vast, but your trajectory doesn't have to be uncertain. Start with a free audit. We'll show you exactly where the opportunities are hiding.
             </p>
-            
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link
-                to="/free-audit"
-                className="w-full sm:w-auto px-10 py-5 bg-cosmic-teal text-background font-heading font-bold text-xl rounded-sm hover:bg-cosmic-magenta transition-colors"
-              >
+              <a href="/free-audit" className="w-full sm:w-auto px-10 py-5 bg-cosmic-teal text-background font-heading font-bold text-xl rounded-sm hover:bg-cosmic-magenta transition-colors">
                 Initiate Free Audit
-              </Link>
-              <Link
-                to="/contact"
-                className="w-full sm:w-auto px-10 py-5 bg-transparent border border-cosmic-magenta/40 text-foreground font-heading font-bold text-xl rounded-sm hover:bg-cosmic-magenta/10 transition-colors"
-              >
+              </a>
+              <a href="/contact" className="w-full sm:w-auto px-10 py-5 bg-transparent border border-cosmic-magenta/40 text-foreground font-heading font-bold text-xl rounded-sm hover:bg-cosmic-magenta/10 transition-colors">
                 Contact HQ
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
       </section>
+
       <Footer />
     </div>
   );
