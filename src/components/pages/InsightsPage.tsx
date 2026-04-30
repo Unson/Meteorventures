@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
 import Header from '@/components/Header';
@@ -87,7 +86,7 @@ export default function InsightsPage() {
                       }`}
                     >
                       {insight.mainImage && (
-                        <Link to={`/insights/${insight._id}`} className="block">
+                        <a href={`/insights/${insight._id}`} className="block">
                           <div className="relative h-56 overflow-hidden">
                             <Image
                               src={insight.mainImage}
@@ -96,7 +95,7 @@ export default function InsightsPage() {
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
                           </div>
-                        </Link>
+                        </a>
                       )}
                       
                       <div className="p-6">
@@ -117,13 +116,13 @@ export default function InsightsPage() {
                           )}
                         </div>
 
-                        <Link to={`/insights/${insight._id}`}>
+                        <a href={`/insights/${insight._id}`}>
                           <h2 className={`font-heading text-2xl text-foreground mb-3 transition-colors ${
                             index % 2 === 0 ? 'group-hover:text-nebula-cyan' : 'group-hover:text-nebula-magenta'
                           }`}>
                             {insight.title}
                           </h2>
-                        </Link>
+                        </a>
 
                         {insight.excerpt && (
                           <p className="font-paragraph text-base text-foreground/80 mb-4 line-clamp-3 leading-relaxed">
@@ -131,15 +130,15 @@ export default function InsightsPage() {
                           </p>
                         )}
 
-                        <Link
-                          to={`/insights/${insight._id}`}
+                        <a
+                          href={`/insights/${insight._id}`}
                           className={`inline-flex items-center gap-2 font-paragraph text-base hover:gap-3 transition-all ${
                             index % 2 === 0 ? 'text-nebula-cyan' : 'text-nebula-magenta'
                           }`}
                         >
                           Read More
                           <ArrowRight className="w-4 h-4" />
-                        </Link>
+                        </a>
                       </div>
                     </motion.article>
                   ))}
@@ -187,12 +186,12 @@ export default function InsightsPage() {
             <p className="font-paragraph text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
               Get a free site audit and see exactly how we can help your business get found online.
             </p>
-            <Link
-              to="/free-audit"
+            <a
+              href="/free-audit"
               className="inline-block bg-nebula-cyan text-background font-heading font-bold text-lg px-10 py-5 rounded-lg hover:bg-nebula-magenta transition-colors"
             >
               Get Your Free Audit
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
