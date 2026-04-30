@@ -19,41 +19,30 @@ import TransmissionsPage from "@/components/pages/TransmissionsPage";
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const segments = pathname.split('/').filter(Boolean);
 
-// Determine which page to render and the page name for SEO
-let PageComponent = HomePage;
-let pageName = 'Home';
+const isHome = segments.length === 0;
+const isAbout = segments[0] === 'about';
+const isServices = segments[0] === 'services';
+const isInsightDetail = segments[0] === 'insights' && segments.length > 1;
+const isInsights = segments[0] === 'insights' && segments.length === 1;
+const isFreeAudit = segments[0] === 'free-audit';
+const isContact = segments[0] === 'contact';
+const isPartners = segments[0] === 'partners';
+const isTransmissions = segments[0] === 'transmissions';
 
-if (segments[0] === 'about') {
-  PageComponent = AboutPage;
-  pageName = 'About';
-} else if (segments[0] === 'services') {
-  PageComponent = ServicesPage;
-  pageName = 'Services';
-} else if (segments[0] === 'insights' && segments[1]) {
-  PageComponent = InsightDetailPage;
-  pageName = 'Insight';
-} else if (segments[0] === 'insights') {
-  PageComponent = InsightsPage;
-  pageName = 'Insights';
-} else if (segments[0] === 'free-audit') {
-  PageComponent = FreeAuditPage;
-  pageName = 'Free Audit';
-} else if (segments[0] === 'contact') {
-  PageComponent = ContactPage;
-  pageName = 'Contact';
-} else if (segments[0] === 'partners') {
-  PageComponent = PartnersPage;
-  pageName = 'Partners';
-} else if (segments[0] === 'transmissions') {
-  PageComponent = TransmissionsPage;
-  pageName = 'Transmissions';
-}
+const pageName =
+  isAbout ? 'About' :
+  isServices ? 'Services' :
+  isInsightDetail ? 'Insight' :
+  isInsights ? 'Insights' :
+  isFreeAudit ? 'Free Audit' :
+  isContact ? 'Contact' :
+  isPartners ? 'Partners' :
+  isTransmissions ? 'Transmissions' :
+  'Home';
 
 const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
   pageUrl: Astro.url.href,
-  itemData: {
-    pageName,
-  },
+  itemData: { pageName },
 });
 ---
 <html lang="en" class="w-full h-full">
@@ -63,7 +52,16 @@ const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
   </head>
   <body class="w-full h-full">
     <div id="root" class="w-full h-full">
-      <PageComponent client:only="react" />
+      {isHome && <HomePage client:only="react" />}
+      {isAbout && <AboutPage client:only="react" />}
+      {isServices && <ServicesPage client:only="react" />}
+      {isInsightDetail && <InsightDetailPage client:only="react" />}
+      {isInsights && <InsightsPage client:only="react" />}
+      {isFreeAudit && <FreeAuditPage client:only="react" />}
+      {isContact && <ContactPage client:only="react" />}
+      {isPartners && <PartnersPage client:only="react" />}
+      {isTransmissions && <TransmissionsPage client:only="react" />}
+      {!isHome && !isAbout && !isServices && !isInsightDetail && !isInsights && !isFreeAudit && !isContact && !isPartners && !isTransmissions && <HomePage client:only="react" />}
     </div>
   </body>
 </html>
