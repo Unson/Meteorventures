@@ -41,7 +41,7 @@ export default defineConfig({
     }),
   ],
   vite: {
-    plugins: [customErrorOverlayPlugin()],
+  plugins: [...(!isBuild ? [customErrorOverlayPlugin()] : [])],
     cacheDir: 'node_modules/.cache/.vite',
     optimizeDeps: {
       include: [

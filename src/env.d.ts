@@ -18,12 +18,3 @@ declare global {
     readonly BASE_NAME: string;
   }
 }
-
-declare module "react-router-dom" {
-  export interface IndexRouteObject {
-    routeMetadata?: PageMetadata;
-  }
-  export interface NonIndexRouteObject {
-    routeMetadata?: PageMetadata;
-  }
-}
