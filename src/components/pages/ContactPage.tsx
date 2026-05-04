@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Input } from '@/components/ui/input';
@@ -23,7 +22,6 @@ export default function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     setIsSubmitting(false);
@@ -65,7 +63,6 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       
-      {/* Hero Section */}
       <section className="relative w-full pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-background to-background" />
         
@@ -86,7 +83,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Info Cards */}
       <section className="w-full bg-secondary/30 py-20">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
@@ -117,11 +113,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form & Info */}
       <section className="w-full bg-background py-20">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -151,102 +145,33 @@ export default function ContactPage() {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                      <label htmlFor="name" className="block font-paragraph text-sm text-foreground mb-2">
-                        Your Name *
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="bg-background border-foreground/20 text-foreground"
-                        placeholder="John Smith"
-                      />
+                      <label htmlFor="name" className="block font-paragraph text-sm text-foreground mb-2">Your Name *</label>
+                      <Input id="name" name="name" type="text" required value={formData.name} onChange={handleChange} className="bg-background border-foreground/20 text-foreground" placeholder="John Smith" />
                     </div>
-
                     <div>
-                      <label htmlFor="email" className="block font-paragraph text-sm text-foreground mb-2">
-                        Email Address *
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="bg-background border-foreground/20 text-foreground"
-                        placeholder="john@example.com"
-                      />
+                      <label htmlFor="email" className="block font-paragraph text-sm text-foreground mb-2">Email Address *</label>
+                      <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className="bg-background border-foreground/20 text-foreground" placeholder="john@example.com" />
                     </div>
-
                     <div>
-                      <label htmlFor="phone" className="block font-paragraph text-sm text-foreground mb-2">
-                        Phone Number
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="bg-background border-foreground/20 text-foreground"
-                        placeholder="(215)-948-2839"
-                      />
+                      <label htmlFor="phone" className="block font-paragraph text-sm text-foreground mb-2">Phone Number</label>
+                      <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className="bg-background border-foreground/20 text-foreground" placeholder="(215)-948-2839" />
                     </div>
-
                     <div>
-                      <label htmlFor="subject" className="block font-paragraph text-sm text-foreground mb-2">
-                        Subject *
-                      </label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        type="text"
-                        required
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className="bg-background border-foreground/20 text-foreground"
-                        placeholder="How can we help?"
-                      />
+                      <label htmlFor="subject" className="block font-paragraph text-sm text-foreground mb-2">Subject *</label>
+                      <Input id="subject" name="subject" type="text" required value={formData.subject} onChange={handleChange} className="bg-background border-foreground/20 text-foreground" placeholder="How can we help?" />
                     </div>
-
                     <div>
-                      <label htmlFor="message" className="block font-paragraph text-sm text-foreground mb-2">
-                        Message *
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        rows={6}
-                        required
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="bg-background border-foreground/20 text-foreground"
-                        placeholder="Tell us about your business and what you're looking for..."
-                      />
+                      <label htmlFor="message" className="block font-paragraph text-sm text-foreground mb-2">Message *</label>
+                      <Textarea id="message" name="message" rows={6} required value={formData.message} onChange={handleChange} className="bg-background border-foreground/20 text-foreground" placeholder="Tell us about your business and what you're looking for..." />
                     </div>
-
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-accent-c-t-a text-background font-heading font-bold text-lg py-6 hover:opacity-90 flex items-center justify-center gap-2"
-                    >
-                      {isSubmitting ? 'Sending...' : (
-                        <>
-                          <Send className="w-5 h-5" />
-                          Send Message
-                        </>
-                      )}
+                    <Button type="submit" disabled={isSubmitting} className="w-full bg-accent-c-t-a text-background font-heading font-bold text-lg py-6 hover:opacity-90 flex items-center justify-center gap-2">
+                      {isSubmitting ? 'Sending...' : (<><Send className="w-5 h-5" />Send Message</>)}
                     </Button>
                   </form>
                 )}
               </div>
             </motion.div>
 
-            {/* Additional Info */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -254,53 +179,43 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <div>
-                <h2 className="font-heading text-3xl text-foreground mb-6">
-                  Why Work With Us?
-                </h2>
+                <h2 className="font-heading text-3xl text-foreground mb-6">Why Work With Us?</h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-accent-c-t-a flex-shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-heading text-lg text-foreground mb-1">Veteran-Owned</h3>
-                      <p className="font-paragraph text-sm text-foreground/80">
-                        Military discipline and mission-focused execution in every campaign.
-                      </p>
+                      <p className="font-paragraph text-sm text-foreground/80">Military discipline and mission-focused execution in every campaign.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-accent-c-t-a flex-shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-heading text-lg text-foreground mb-1">Results-Driven</h3>
-                      <p className="font-paragraph text-sm text-foreground/80">
-                        We measure success by one metric: does it bring in customers?
-                      </p>
+                      <p className="font-paragraph text-sm text-foreground/80">We measure success by one metric: does it bring in customers?</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-6 h-6 text-accent-c-t-a flex-shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-heading text-lg text-foreground mb-1">No BS Approach</h3>
-                      <p className="font-paragraph text-sm text-foreground/80">
-                        Straight talk, real strategies, and accountability for results.
-                      </p>
+                      <p className="font-paragraph text-sm text-foreground/80">Straight talk, real strategies, and accountability for results.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="bg-primary/40 border border-accent-c-t-a/30 rounded-lg p-8">
-                <h3 className="font-heading text-2xl text-foreground mb-4">
-                  Prefer a Free Audit First?
-                </h3>
+                <h3 className="font-heading text-2xl text-foreground mb-4">Prefer a Free Audit First?</h3>
                 <p className="font-paragraph text-base text-foreground/80 mb-6">
                   Not ready to commit? Start with a free site audit. We'll show you exactly what's holding your business back.
                 </p>
-                <Link
-                  to="/free-audit"
+                <a
+                  href="/free-audit"
                   className="inline-block bg-accent-c-t-a text-background font-heading font-bold text-base px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
                 >
                   Get Your Free Audit
-                </Link>
+                </a>
               </div>
 
               <div className="bg-secondary/40 border border-foreground/10 rounded-lg p-8">
@@ -315,9 +230,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
-                <p className="font-paragraph text-sm text-foreground/60">
-                  Emergency support available for existing clients.
-                </p>
+                <p className="font-paragraph text-sm text-foreground/60">Emergency support available for existing clients.</p>
               </div>
             </motion.div>
           </div>
