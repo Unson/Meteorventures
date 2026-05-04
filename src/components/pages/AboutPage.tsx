@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Shield, Target, Users, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -176,12 +175,12 @@ export default function AboutPage() {
             <p className="font-paragraph text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
               Start with a free site audit. We'll show you exactly what's holding you back and how to fix it.
             </p>
-            <Link
-              to="/free-audit"
+            <a
+              href="/free-audit"
               className="inline-block bg-nebula-cyan text-background font-heading font-bold text-lg px-10 py-5 rounded-lg hover:bg-nebula-magenta transition-colors"
             >
               Get Your Free Audit
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
