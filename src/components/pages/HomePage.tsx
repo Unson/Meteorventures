@@ -166,7 +166,7 @@ export default function HomePage() {
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 pt-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-8">
-              <div
+              <motion.div
                 initial={{ opacity: 0, filter: "blur(10px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
@@ -203,7 +203,7 @@ export default function HomePage() {
                     Explore Capabilities
                   </a>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
