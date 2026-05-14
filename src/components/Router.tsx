@@ -1,5 +1,5 @@
 import { MemberProvider } from '@/integrations';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useLocation, Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 
 import HomePage from './pages/HomePage';
@@ -20,24 +20,70 @@ function ScrollToTop() {
   return null;
 }
 
+function Layout() {
+  return (
+    <>
+      <ScrollToTop />
+      <Outlet />
+    </>
+  );
+}
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />
+      },
+      {
+        path: "about",
+        element: <AboutPage />
+      },
+      {
+        path: "services",
+        element: <ServicesPage />
+      },
+      {
+        path: "insights",
+        element: <InsightsPage />
+      },
+      {
+        path: "insights/:id",
+        element: <InsightDetailPage />
+      },
+      {
+        path: "free-audit",
+        element: <FreeAuditPage />
+      },
+      {
+        path: "contact",
+        element: <ContactPage />
+      },
+      {
+        path: "partners",
+        element: <PartnersPage />
+      },
+      {
+        path: "transmissions",
+        element: <TransmissionsPage />
+      },
+      {
+        path: "*",
+        element: <HomePage />
+      }
+    ]
+  }
+], {
+  basename: import.meta.env.BASE_URL,
+});
+
 export default function AppRouter() {
   return (
     <MemberProvider>
-      <Router basename={import.meta.env.BASE_URL}>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/insights" element={<InsightsPage />} />
-          <Route path="/insights/:id" element={<InsightDetailPage />} />
-          <Route path="/free-audit" element={<FreeAuditPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/partners" element={<PartnersPage />} />
-          <Route path="/transmissions" element={<TransmissionsPage />} />
-          <Route path="*" element={<HomePage />} />
-        </Routes>
-      </Router>
+      <RouterProvider router={router} />
     </MemberProvider>
   );
 }
