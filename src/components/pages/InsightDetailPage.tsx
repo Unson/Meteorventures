@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowLeft, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
@@ -10,9 +11,7 @@ import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 
 export default function InsightDetailPage() {
-  const id = typeof window !== 'undefined'
-    ? window.location.pathname.split('/').filter(Boolean).pop()
-    : undefined;
+  const { id } = useParams<{ id: string }>();
 
   const [insight, setInsight] = useState<Insights | null>(null);
   const [relatedInsights, setRelatedInsights] = useState<Insights[]>([]);
