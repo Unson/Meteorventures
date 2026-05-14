@@ -1,6 +1,6 @@
 // HPI 1.7-G - Cosmic Horror Aesthetic
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Target, Zap, TrendingUp, Shield, ArrowRight, ChevronRight, Star } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -148,31 +148,25 @@ const SectionHeader = ({ title, subtitle, align = 'center' }: { title: string, s
 );
 
 export default function HomePage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
-  const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const opacityHero = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-
   return (
-    <div ref={containerRef} className="min-h-screen bg-background text-foreground overflow-clip selection:bg-cosmic-teal/30 selection:text-white">
+    <div className="min-h-screen bg-background text-foreground overflow-clip selection:bg-cosmic-teal/30 selection:text-white">
       <Header />
 
       {/* HERO */}
       <section className="relative w-full min-h-[100vh] flex items-center justify-center overflow-hidden">
-        <motion.div style={{ y: yBackground }} className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-background" />
           <div className="absolute inset-0 bg-gradient-to-b from-cosmic-magenta/8 via-cosmic-purple/5 to-background" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(195,0,255,0.1),transparent_70%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,0,255,0.06),transparent_60%)]" />
           <StarField />
           <MeteorEffect />
-        </motion.div>
+        </div>
 
         <div className="relative z-10 w-full max-w-[120rem] mx-auto px-6 md:px-12 pt-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-8">
-              <motion.div
-                style={{ opacity: opacityHero }}
+              <div
                 initial={{ opacity: 0, filter: "blur(10px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
@@ -209,7 +203,7 @@ export default function HomePage() {
                     Explore Capabilities
                   </a>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
