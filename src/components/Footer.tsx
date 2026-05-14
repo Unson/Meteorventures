@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Shield, Linkedin, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -43,13 +44,13 @@ export default function Footer() {
             <h3 className="font-heading text-xl text-foreground mb-6">Quick Links</h3>
             <nav className="flex flex-col gap-3">
               {quickLinks.map((link) => (
-                <a
+                <Link
                   key={link.path}
-                  href={link.path}
+                  to={link.path}
                   className="font-paragraph text-base text-foreground/80 hover:text-cosmic-teal transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -128,17 +129,17 @@ export default function Footer() {
           {/* Simple Footer Links Section */}
           <div className="pt-8 border-t border-foreground/10">
             <nav className="flex flex-wrap gap-4 justify-center md:justify-start">
-              <a href="/" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Home</a>
+              <Link to="/" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Home</Link>
               <span className="text-foreground/30">•</span>
-              <a href="/services" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Services</a>
+              <Link to="/services" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Services</Link>
               <span className="text-foreground/30">•</span>
-              <a href="/about" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">About</a>
+              <Link to="/about" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">About</Link>
               <span className="text-foreground/30">•</span>
-              <a href="/insights" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Insights</a>
+              <Link to="/insights" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Insights</Link>
               <span className="text-foreground/30">•</span>
-              <a href="/partners" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Partners</a>
+              <Link to="/partners" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Partners</Link>
               <span className="text-foreground/30">•</span>
-              <a href="/free-audit" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Book Consultation</a>
+              <Link to="/free-audit" className="font-paragraph text-sm text-foreground/70 hover:text-cosmic-teal transition-colors">Book Consultation</Link>
             </nav>
           </div>
         </div>

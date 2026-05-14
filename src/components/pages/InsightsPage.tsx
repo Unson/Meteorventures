@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
@@ -86,11 +87,11 @@ export default function InsightsPage() {
                       }`}
                     >
                       {insight.mainImage && (
-                        <a href={`/insights/${insight._id}`} className="block">
+                        <Link to={`/insights/${insight._id}`} className="block">
                           <div className="relative h-56 overflow-hidden">
                             <Image src={insight.mainImage} alt={insight.title || 'Insight image'} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                           </div>
-                        </a>
+                        </Link>
                       )}
                       
                       <div className="p-6">
@@ -111,13 +112,13 @@ export default function InsightsPage() {
                           )}
                         </div>
 
-                        <a href={`/insights/${insight._id}`}>
+                        <Link to={`/insights/${insight._id}`}>
                           <h2 className={`font-heading text-2xl text-foreground mb-3 transition-colors ${
                             index % 2 === 0 ? 'group-hover:text-nebula-cyan' : 'group-hover:text-nebula-magenta'
                           }`}>
                             {insight.title}
                           </h2>
-                        </a>
+                        </Link>
 
                         {insight.excerpt && (
                           <p className="font-paragraph text-base text-foreground/80 mb-4 line-clamp-3 leading-relaxed">
@@ -125,15 +126,15 @@ export default function InsightsPage() {
                           </p>
                         )}
 
-                        <a
-                          href={`/insights/${insight._id}`}
+                        <Link
+                          to={`/insights/${insight._id}`}
                           className={`inline-flex items-center gap-2 font-paragraph text-base hover:gap-3 transition-all ${
                             index % 2 === 0 ? 'text-nebula-cyan' : 'text-nebula-magenta'
                           }`}
                         >
                           Read More
                           <ArrowRight className="w-4 h-4" />
-                        </a>
+                        </Link>
                       </div>
                     </motion.article>
                   ))}

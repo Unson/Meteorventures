@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowLeft, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
@@ -50,13 +50,13 @@ export default function InsightDetailPage() {
       
       <div className="pt-32 pb-20">
         <div className="max-w-[100rem] mx-auto px-6 md:px-12">
-          <a
-            href="/insights"
+          <Link
+            to="/insights"
             className="inline-flex items-center gap-2 font-paragraph text-base text-foreground/80 hover:text-accent-c-t-a transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Insights
-          </a>
+          </Link>
 
           <div className="min-h-[600px]">
             {isLoading ? (
@@ -69,12 +69,12 @@ export default function InsightDetailPage() {
                 <p className="font-paragraph text-base text-foreground/60 mb-8">
                   The insight you're looking for doesn't exist or has been removed.
                 </p>
-                <a
-                  href="/insights"
+                <Link
+                  to="/insights"
                   className="inline-block bg-accent-c-t-a text-background font-heading font-bold text-base px-8 py-4 rounded-lg hover:opacity-90 transition-opacity"
                 >
                   View All Insights
-                </a>
+                </Link>
               </div>
             ) : (
               <article>
@@ -153,30 +153,30 @@ export default function InsightDetailPage() {
                           className="bg-secondary/40 border border-foreground/10 rounded-lg overflow-hidden hover:border-accent-c-t-a/50 transition-colors group"
                         >
                           {related.mainImage && (
-                            <a href={`/insights/${related._id}`} className="block">
+                            <Link to={`/insights/${related._id}`} className="block">
                               <div className="relative h-48 overflow-hidden">
                                 <Image src={related.mainImage} alt={related.title || 'Related insight'} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                               </div>
-                            </a>
+                            </Link>
                           )}
                           <div className="p-6">
-                            <a href={`/insights/${related._id}`}>
+                            <Link to={`/insights/${related._id}`}>
                               <h3 className="font-heading text-xl text-foreground mb-3 group-hover:text-accent-c-t-a transition-colors line-clamp-2">
                                 {related.title}
                               </h3>
-                            </a>
+                            </Link>
                             {related.excerpt && (
                               <p className="font-paragraph text-sm text-foreground/80 mb-4 line-clamp-2">
                                 {related.excerpt}
                               </p>
                             )}
-                            <a
-                              href={`/insights/${related._id}`}
+                            <Link
+                              to={`/insights/${related._id}`}
                               className="inline-flex items-center gap-2 font-paragraph text-sm text-accent-c-t-a hover:gap-3 transition-all"
                             >
                               Read More
                               <ArrowRight className="w-4 h-4" />
-                            </a>
+                            </Link>
                           </div>
                         </article>
                       ))}
