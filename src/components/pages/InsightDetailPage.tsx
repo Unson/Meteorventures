@@ -7,8 +7,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BaseCrudService } from '@/integrations';
 import { Insights } from '@/entities';
-import { Image } from '@/components/ui/image';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
+import { Image } from '@/components/ui/image';
 
 export default function InsightDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -118,12 +118,7 @@ export default function InsightDetailPage() {
                     className="mb-12"
                   >
                     <div className="relative h-[400px] md:h-[600px] rounded-lg overflow-hidden">
-                      <Image
-                        src={insight.mainImage}
-                        alt={insight.title || 'Insight image'}
-                        width={1200}
-                        className="w-full h-full object-cover"
-                      />
+                      <Image src={insight.mainImage} alt={insight.title || 'Insight image'} className="w-full h-full object-cover" />
                     </div>
                   </motion.div>
                 )}
@@ -160,12 +155,7 @@ export default function InsightDetailPage() {
                           {related.mainImage && (
                             <a href={`/insights/${related._id}`} className="block">
                               <div className="relative h-48 overflow-hidden">
-                                <Image
-                                  src={related.mainImage}
-                                  alt={related.title || 'Related insight'}
-                                  width={400}
-                                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
+                                <Image src={related.mainImage} alt={related.title || 'Related insight'} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                               </div>
                             </a>
                           )}

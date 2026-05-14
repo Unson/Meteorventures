@@ -87,12 +87,7 @@ export default function TransmissionsPage() {
                       {insight.mainImage && (
                         <a href={`/insights/${insight._id}`} className="block">
                           <div className="relative h-56 overflow-hidden">
-                            <Image
-                              src={insight.mainImage}
-                              alt={insight.title || 'Insight image'}
-                              width={600}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            />
+                            <Image src={insight.mainImage} alt={insight.title || 'Insight image'} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                           </div>
                         </a>
                       )}

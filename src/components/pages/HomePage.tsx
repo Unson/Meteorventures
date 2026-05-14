@@ -220,11 +220,7 @@ export default function HomePage() {
               <div className="absolute -inset-12 bg-gradient-to-r from-cosmic-teal/40 via-cosmic-magenta/30 to-cosmic-teal/40 blur-3xl rounded-full animate-pulse" />
               <div className="absolute -inset-16 bg-gradient-to-r from-cosmic-magenta/20 via-cosmic-purple/15 to-cosmic-magenta/20 blur-2xl rounded-full opacity-60 animate-pulse" style={{ animationDelay: '0.5s' }} />
               <div className="relative aspect-[4/5] w-4/5 md:w-2/3 overflow-hidden rounded-lg border-2 border-cosmic-teal/60 shadow-2xl shadow-cosmic-teal/50">
-                <Image 
-                  src="https://static.wixstatic.com/media/ca33ee_a75866ae73f34e95a8f1a185c75bed6d~mv2.jpg" 
-                  alt="Abstract representation of digital void" 
-                  className="w-full h-full object-cover opacity-100 hover:scale-110 transition-transform duration-700"
-                />
+                <Image src="https://static.wixstatic.com/media/ca33ee_a75866ae73f34e95a8f1a185c75bed6d~mv2.jpg" alt="Abstract representation of digital void" className="w-full h-full object-cover opacity-100 hover:scale-110 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
                 <div className="absolute inset-0 bg-gradient-to-b from-cosmic-magenta/10 via-transparent to-cosmic-teal/10 rounded-sm" />
                 <div className="absolute bottom-8 left-8 right-8">
