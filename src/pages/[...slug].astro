@@ -6,39 +6,9 @@ import "@wix/wix-vibe-plugins/plugins-vars.css";
 import "@wix/wix-vibe-plugins/plugins-theme.css";
 import "@/styles/global.css";
 
-import HomePage from "@/components/pages/HomePage";
-import AboutPage from "@/components/pages/AboutPage";
-import ServicesPage from "@/components/pages/ServicesPage";
-import InsightsPage from "@/components/pages/InsightsPage";
-import InsightDetailPage from "@/components/pages/InsightDetailPage";
-import FreeAuditPage from "@/components/pages/FreeAuditPage";
-import ContactPage from "@/components/pages/ContactPage";
-import PartnersPage from "@/components/pages/PartnersPage";
-import TransmissionsPage from "@/components/pages/TransmissionsPage";
+import AppRouter from "@/components/Router";
 
-const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
-const segments = pathname.split('/').filter(Boolean);
-
-const isHome = segments.length === 0;
-const isAbout = segments[0] === 'about';
-const isServices = segments[0] === 'services';
-const isInsightDetail = segments[0] === 'insights' && segments.length > 1;
-const isInsights = segments[0] === 'insights' && segments.length === 1;
-const isFreeAudit = segments[0] === 'free-audit';
-const isContact = segments[0] === 'contact';
-const isPartners = segments[0] === 'partners';
-const isTransmissions = segments[0] === 'transmissions';
-
-const pageName =
-  isAbout ? 'About' :
-  isServices ? 'Services' :
-  isInsightDetail ? 'Insight' :
-  isInsights ? 'Insights' :
-  isFreeAudit ? 'Free Audit' :
-  isContact ? 'Contact' :
-  isPartners ? 'Partners' :
-  isTransmissions ? 'Transmissions' :
-  'Home';
+const pageName = 'Page';
 
 const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
   pageUrl: Astro.url.href,
@@ -52,16 +22,7 @@ const seoTagsServiceConfig = await loadSEOTagsServiceConfig({
   </head>
   <body class="w-full h-full">
     <div id="root" class="w-full h-full">
-      {isHome && <HomePage client:only="react" />}
-      {isAbout && <AboutPage client:only="react" />}
-      {isServices && <ServicesPage client:only="react" />}
-      {isInsightDetail && <InsightDetailPage client:only="react" />}
-      {isInsights && <InsightsPage client:only="react" />}
-      {isFreeAudit && <FreeAuditPage client:only="react" />}
-      {isContact && <ContactPage client:only="react" />}
-      {isPartners && <PartnersPage client:only="react" />}
-      {isTransmissions && <TransmissionsPage client:only="react" />}
-      {!isHome && !isAbout && !isServices && !isInsightDetail && !isInsights && !isFreeAudit && !isContact && !isPartners && !isTransmissions && <HomePage client:only="react" />}
+      <AppRouter client:only="react" />
     </div>
   </body>
 </html>
