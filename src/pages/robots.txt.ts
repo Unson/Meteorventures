@@ -8,8 +8,6 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /private
-Disallow: /*.json$
-Disallow: /*.xml$
 
 # Specific rules for major search engines
 User-agent: Googlebot

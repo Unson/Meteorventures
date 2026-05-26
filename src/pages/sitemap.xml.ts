@@ -1,8 +1,6 @@
 import type { Insights } from '@/entities';
 import { BaseCrudService } from '@/integrations';
 
-export const prerender = true;
-
 export async function GET() {
   const baseUrl = 'https://www.meteorventuresllc.com';
 
