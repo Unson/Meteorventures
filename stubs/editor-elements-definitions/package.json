@@ -1,0 +1,7 @@
+{
+  "name": "@wix/editor-elements-definitions",
+  "version": "1.125.0",
+  "description": "Local stub — private Wix package not on public npm registry",
+  "main": "index.js",
+  "types": "index.d.ts"
+}

@@ -54,6 +54,7 @@
     "@wix/blog": "^1.0.557",
     "@wix/cloud-provider-fetch-adapter": "^1.0.4",
     "@wix/data": "^1.0.376",
+    "@wix/ecom": "^1.0.0",
     "@wix/essentials": "^1.0.1",
     "@wix/fast-gallery-vibe": "1.28.0",
     "@wix/headless-components": "0.0.36",
@@ -124,6 +125,7 @@
   "overrides": {
     "@wix/services-definitions": "^1.0.1",
     "@wix/services-manager": "^1.0.2",
-    "@wix/services-manager-react": "^1.0.3"
+    "@wix/services-manager-react": "^1.0.3",
+    "@wix/editor-elements-definitions": "file:./stubs/editor-elements-definitions"
   }
 }
